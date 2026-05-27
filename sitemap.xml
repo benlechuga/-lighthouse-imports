@@ -3,14 +3,14 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml"
         xmlns:image="http://www.google.com/schemas/sitemap-image/0.9">
   <url>
-    <loc>https://lighthouseimports.com.br/</loc>
+    <loc>https://calc.lighthouseimports.com.br/</loc>
     <lastmod>2026-05-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://lighthouseimports.com.br/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lighthouseimports.com.br/" />
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://calc.lighthouseimports.com.br/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://calc.lighthouseimports.com.br/" />
     <image:image>
-      <image:loc>https://lighthouseimports.com.br/og-image.png</image:loc>
+      <image:loc>https://calc.lighthouseimports.com.br/og-image.png</image:loc>
       <image:title>CALCCOMEX IA — Custo total de importação em segundos, com IA</image:title>
       <image:caption>Cotação e simulação de custo total de importação com inteligência artificial.</image:caption>
     </image:image>
