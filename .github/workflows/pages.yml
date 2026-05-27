@@ -3,7 +3,6 @@ name: Deploy landing page to GitHub Pages
 on:
   push:
     branches:
-      - claude/calccomex-ia-landing-page-cii75
       - main
   workflow_dispatch:
 
