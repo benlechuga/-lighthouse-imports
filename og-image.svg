@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0a1226"/>
+      <stop offset="1" stop-color="#0b1b3b"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="950" cy="120" r="500" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2D8BFF" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#2D8BFF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="120" cy="520" r="450" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#00D4B4" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#00D4B4" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2D8BFF"/>
+      <stop offset="1" stop-color="#00D4B4"/>
+    </linearGradient>
+    <linearGradient id="mark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2D8BFF"/>
+      <stop offset="1" stop-color="#00D4B4"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow1)"/>
+  <rect width="1200" height="630" fill="url(#glow2)"/>
+
+  <g transform="translate(80, 80)">
+    <rect width="56" height="56" rx="14" fill="url(#mark)"/>
+    <path d="M16 38l8-8 6 6 14-14" stroke="#fff" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <circle cx="44" cy="22" r="3" fill="#fff"/>
+    <text x="76" y="40" font-family="Inter, -apple-system, Segoe UI, sans-serif" font-size="26" font-weight="700" fill="#e7eefc">
+      CALCCOMEX <tspan fill="#00D4B4">IA</tspan>
+    </text>
+  </g>
+
+  <g transform="translate(80, 220)">
+    <rect width="220" height="38" rx="19" fill="rgba(0,212,180,0.10)" stroke="rgba(0,212,180,0.35)"/>
+    <text x="20" y="25" font-family="Inter, sans-serif" font-size="14" font-weight="600" letter-spacing="2" fill="#00D4B4">
+      INTELIGÊNCIA ARTIFICIAL
+    </text>
+  </g>
+
+  <text x="80" y="340" font-family="Inter, -apple-system, Segoe UI, sans-serif" font-size="64" font-weight="800" fill="#e7eefc" letter-spacing="-1.5">
+    Custo total de importação
+  </text>
+  <text x="80" y="420" font-family="Inter, sans-serif" font-size="64" font-weight="800" letter-spacing="-1.5">
+    <tspan fill="#e7eefc">em </tspan><tspan fill="url(#grad)">segundos</tspan><tspan fill="#e7eefc">, com IA.</tspan>
+  </text>
+
+  <text x="80" y="490" font-family="Inter, sans-serif" font-size="24" fill="#a9b7d6">
+    Impostos, frete, seguro e despesas aduaneiras — automatizados.
+  </text>
+
+  <g transform="translate(80, 540)" font-family="Inter, sans-serif" font-size="16" fill="#7f8db0">
+    <circle cx="6" cy="-5" r="4" fill="#00D4B4"/>
+    <text x="20" y="0">NCM automático</text>
+    <circle cx="186" cy="-5" r="4" fill="#00D4B4"/>
+    <text x="200" y="0">Impostos completos</text>
+    <circle cx="406" cy="-5" r="4" fill="#00D4B4"/>
+    <text x="420" y="0">Relatórios prontos</text>
+  </g>
+
+  <g transform="translate(720, 200)">
+    <rect width="400" height="270" rx="20" fill="rgba(18,42,90,0.85)" stroke="rgba(255,255,255,0.14)"/>
+    <text x="24" y="38" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#e7eefc">
+      <tspan>● </tspan>Simulação · NCM 8471.30
+    </text>
+    <line x1="24" y1="60" x2="376" y2="60" stroke="rgba(255,255,255,0.08)"/>
+
+    <g font-family="Inter, sans-serif" font-size="15">
+      <text x="24" y="92" fill="#a9b7d6">FOB (Shanghai)</text>
+      <text x="376" y="92" fill="#e7eefc" text-anchor="end" font-weight="600">US$ 12.500</text>
+
+      <text x="24" y="122" fill="#a9b7d6">Frete + seguro</text>
+      <text x="376" y="122" fill="#e7eefc" text-anchor="end" font-weight="600">US$ 1.272</text>
+
+      <text x="24" y="152" fill="#a9b7d6">Impostos (BR)</text>
+      <text x="376" y="152" fill="#e7eefc" text-anchor="end" font-weight="600">R$ 24.317</text>
+    </g>
+
+    <rect x="24" y="178" width="352" height="64" rx="12" fill="rgba(0,212,180,0.10)" stroke="rgba(0,212,180,0.35)"/>
+    <text x="40" y="216" font-family="Inter, sans-serif" font-size="15" fill="#a9b7d6">Landed cost</text>
+    <text x="360" y="220" font-family="Inter, sans-serif" font-size="26" font-weight="800" fill="url(#grad)" text-anchor="end">R$ 98.124,70</text>
+  </g>
+</svg>

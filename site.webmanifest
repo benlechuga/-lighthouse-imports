@@ -1,0 +1,12 @@
+{
+  "name": "CALCCOMEX IA",
+  "short_name": "CALCCOMEX",
+  "description": "Cotação e simulação de custo total de importação com IA.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a1226",
+  "theme_color": "#0B1B3B",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
