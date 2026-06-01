@@ -62,6 +62,6 @@
     <circle cx="222" cy="-6" r="5" fill="#00D4B4"/>
     <text x="239" y="0">Impostos completos</text>
     <circle cx="476" cy="-6" r="5" fill="#00D4B4"/>
-    <text x="493" y="0">Landed cost em BRL</text>
+    <text x="493" y="0">Valor final em BRL</text>
   </g>
 </svg>
