@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Estudo de Importação — Refrigerador Expositor Comercial | Inmetro + NCM | Lighthouse Imports</title>
+  <meta name="description" content="Estudo completo para importar refrigerador expositor comercial (vertical) para locação ou revenda: NCM 8418.50.90, tributação, e o passo a passo visual da certificação compulsória do Inmetro." />
+  <meta name="author" content="Lighthouse Imports" />
+  <meta name="robots" content="noindex, follow" />
+  <meta name="theme-color" content="#0B1B3B" />
+  <meta name="color-scheme" content="dark" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="alternate icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- Fontes e CSS base -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* ---- Estilos específicos do estudo (herda os tokens do styles.css) ---- */
+    .study-hero { padding: 56px 0 40px; }
+    .study-hero h1 { font-size: clamp(30px, 4.2vw, 48px); line-height: 1.1; letter-spacing: -0.02em; margin: 14px 0 16px; font-weight: 800; }
+    .study-hero .lead { max-width: 760px; }
+    .meta-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+    .meta-chip { font-size: 13px; color: var(--text-dim); background: rgba(255,255,255,0.04); border: 1px solid var(--line); padding: 7px 13px; border-radius: 999px; }
+    .meta-chip b { color: var(--text); font-weight: 600; }
+
+    .section { padding: 56px 0; border-top: 1px solid var(--line); }
+    .section h2 { font-size: clamp(24px, 3vw, 34px); letter-spacing: -0.015em; margin: 0 0 6px; font-weight: 800; }
+    .section .sub { color: var(--text-dim); font-size: 16px; margin: 0 0 32px; max-width: 760px; }
+
+    /* Resumo executivo — cards */
+    .summary-grid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 16px; }
+    .sum-card { background: linear-gradient(180deg, rgba(18,42,90,0.5), rgba(15,33,71,0.4)); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; }
+    .sum-card .k { font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-mute); margin-bottom: 8px; }
+    .sum-card .v { font-size: 17px; font-weight: 700; letter-spacing: -0.01em; }
+    .sum-card .d { font-size: 13px; color: var(--text-dim); margin-top: 6px; }
+
+    /* Caixas de destaque */
+    .callout { border-radius: 14px; padding: 18px 20px; margin: 22px 0; border: 1px solid; font-size: 15px; }
+    .callout b { color: var(--text); }
+    .callout.warn { background: rgba(255, 184, 0, 0.07); border-color: rgba(255, 184, 0, 0.32); }
+    .callout.info { background: rgba(45, 139, 255, 0.07); border-color: rgba(45, 139, 255, 0.30); }
+    .callout.ok   { background: rgba(0, 212, 180, 0.07); border-color: rgba(0, 212, 180, 0.30); }
+    .callout .tag { display:inline-block; font-weight:700; font-size:12px; letter-spacing:0.06em; text-transform:uppercase; margin-bottom:6px; }
+    .callout.warn .tag { color:#ffce4d; } .callout.info .tag { color:#7fb6ff; } .callout.ok .tag { color: var(--brand-2); }
+
+    /* Tabela NCM */
+    .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); }
+    table.ncm { width: 100%; border-collapse: collapse; min-width: 720px; font-size: 14.5px; }
+    table.ncm th, table.ncm td { text-align: left; padding: 14px 16px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    table.ncm thead th { font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-mute); background: rgba(255,255,255,0.02); }
+    table.ncm tr:last-child td { border-bottom: 0; }
+    table.ncm td .code { font-weight: 700; color: var(--text); font-variant-numeric: tabular-nums; }
+    .pill { display:inline-block; font-size:11.5px; font-weight:700; padding:3px 9px; border-radius:999px; letter-spacing:0.03em; }
+    .pill.rec { background: rgba(0,212,180,0.14); color: var(--brand-2); border:1px solid rgba(0,212,180,0.3); }
+    .pill.alt { background: rgba(255,255,255,0.05); color: var(--text-dim); border:1px solid var(--line); }
+
+    /* Timeline vertical */
+    .timeline { position: relative; margin: 8px 0 0; padding: 0; list-style: none; }
+    .timeline::before { content:""; position:absolute; left: 22px; top: 8px; bottom: 8px; width: 2px; background: linear-gradient(180deg, var(--brand), var(--brand-2)); opacity: 0.5; }
+    .tl-item { position: relative; padding: 0 0 26px 64px; }
+    .tl-item:last-child { padding-bottom: 0; }
+    .tl-dot { position:absolute; left: 0; top: 0; width: 46px; height: 46px; border-radius: 12px; background: var(--grad); color:#04132b; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:16px; box-shadow: var(--shadow-md); }
+    .tl-item h3 { margin: 4px 0 6px; font-size: 17.5px; letter-spacing:-0.01em; }
+    .tl-item p { margin: 0; color: var(--text-dim); font-size: 14.5px; }
+    .tl-item .who { display:inline-block; margin-top:8px; font-size:12px; color: var(--text-mute); background: rgba(255,255,255,0.04); border:1px solid var(--line); padding:3px 10px; border-radius:999px; }
+
+    /* Comparativo locação x revenda */
+    .two-col { display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; }
+    .lane { background: rgba(15,33,71,0.5); border:1px solid var(--line); border-radius: var(--radius); padding: 22px; }
+    .lane h3 { margin:0 0 10px; font-size:18px; }
+    .lane ul { margin: 0; padding-left: 18px; color: var(--text-dim); font-size: 14.5px; }
+    .lane ul li { margin-bottom: 7px; }
+
+    /* Checklist */
+    .checklist { list-style:none; margin:0; padding:0; display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; }
+    .checklist li { display:flex; gap:12px; align-items:flex-start; background: rgba(15,33,71,0.4); border:1px solid var(--line); border-radius:12px; padding:14px 16px; font-size:14.5px; color: var(--text-dim); }
+    .checklist svg { flex: none; margin-top: 2px; }
+    .checklist b { color: var(--text); font-weight:600; }
+
+    /* Custos */
+    .cost-grid { display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap:16px; }
+    .cost { background: linear-gradient(180deg, rgba(18,42,90,0.5), rgba(15,33,71,0.4)); border:1px solid var(--line); border-radius: var(--radius); padding: 22px; text-align:center; }
+    .cost .big { font-size: 26px; font-weight: 800; background: var(--grad); -webkit-background-clip:text; background-clip:text; color: transparent; letter-spacing:-0.01em; }
+    .cost .lbl { font-size: 13.5px; color: var(--text-dim); margin-top:6px; }
+
+    .sources { font-size: 13.5px; color: var(--text-mute); }
+    .sources a { color: var(--text-dim); text-decoration: underline; text-underline-offset: 2px; }
+    .sources li { margin-bottom: 6px; }
+
+    .backlink { display:inline-flex; align-items:center; gap:6px; font-size:14px; color: var(--text-dim); }
+    .backlink:hover { color: var(--text); }
+
+    @media (max-width: 920px) {
+      .summary-grid { grid-template-columns: repeat(2, 1fr); }
+      .cost-grid { grid-template-columns: 1fr; }
+      .two-col, .checklist { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 620px) {
+      .summary-grid { grid-template-columns: 1fr; }
+      .tl-item { padding-left: 58px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="/" class="brand" aria-label="Lighthouse Imports - início">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="28" height="28" rx="7" fill="url(#g1)"/>
+            <path d="M9 20l4-4 3 3 7-7" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="23" cy="12" r="1.6" fill="#fff"/>
+            <defs>
+              <linearGradient id="g1" x1="2" y1="2" x2="30" y2="30" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#2D8BFF"/>
+                <stop offset="1" stop-color="#00D4B4"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </span>
+        <span class="brand-text">Lighthouse <span class="brand-ia">Imports</span></span>
+      </a>
+      <nav class="nav-links" aria-label="Navegação principal">
+        <a href="#ncm">Sugestão de NCM</a>
+        <a href="#inmetro">Inmetro passo a passo</a>
+        <a href="https://calculadora.lighthouseimports.com.br/" class="btn btn-ghost">Simular custo</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="study-hero">
+      <div class="container">
+        <a href="/" class="backlink">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Voltar
+        </a>
+        <span class="eyebrow" style="margin-top:18px;">Estudo de importação · Classificação fiscal + Inmetro</span>
+        <h1>Importar <span class="grad">refrigerador expositor comercial</span> para locação ou revenda</h1>
+        <p class="lead">
+          Um guia direto e visual para quem nunca importou um <b>expositor refrigerado</b> (o gabinete vertical de
+          porta de vidro, para conservar e expor produtos refrigerados em loja, mercado, padaria ou bar): qual é o
+          <b>NCM</b> correto, quanto custa de imposto e — o ponto que mais gera dúvida — <b>como funciona a exigência
+          compulsória do Inmetro</b> para esse produto, do começo ao fim.
+        </p>
+        <div class="meta-row">
+          <span class="meta-chip">Produto: <b>refrigerador expositor comercial (autosserviço)</b></span>
+          <span class="meta-chip">NCM: <b>8418.50.90</b></span>
+          <span class="meta-chip">Inmetro: <b>compulsório</b></span>
+          <span class="meta-chip">Atualizado: <b>jun/2026</b></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESUMO EXECUTIVO -->
+    <section class="section" id="resumo">
+      <div class="container">
+        <h2>Resumo executivo</h2>
+        <p class="sub">O essencial em quatro pontos — para entender a decisão sem ler o estudo inteiro.</p>
+        <div class="summary-grid">
+          <div class="sum-card">
+            <div class="k">NCM sugerido</div>
+            <div class="v">8418.50.90</div>
+            <div class="d">Expositor/vitrine refrigerado comercial (resfriado), para conservar e expor produtos. II de 12,6%.</div>
+          </div>
+          <div class="sum-card">
+            <div class="k">Inmetro (anuência)</div>
+            <div class="v">Depende do destaque</div>
+            <div class="d">O NCM 8418.50.90 tem anuência do Inmetro (segurança, Port. 148/2022) via <b>destaque de uso doméstico/similar</b>. Expositor de uso <b>exclusivamente comercial</b> pode ser dispensado (código 999) — confirmar no Siscomex.</div>
+          </div>
+          <div class="sum-card">
+            <div class="k">Prazo da certificação</div>
+            <div class="v">~3 a 9 meses</div>
+            <div class="d">Comece <b>antes</b> de embarcar. É a etapa mais longa do processo.</div>
+          </div>
+          <div class="sum-card">
+            <div class="k">Custo de certificação</div>
+            <div class="v">~R$ 12k–18k</div>
+            <div class="d">Só a parte de certificação (OCP + laboratório + taxas). Não inclui impostos nem frete.</div>
+          </div>
+        </div>
+
+        <div class="callout warn">
+          <span class="tag">⚠️ A grande diferença: comercial ≠ doméstico</span><br/>
+          Para um expositor <b>comercial</b> existem dois "Inmetros" diferentes, e só um é obrigatório hoje:
+          <b>(1) segurança elétrica</b> — certificação compulsória pela <b>Portaria 148/2022</b> (sucessora da 371/2009),
+          que é o que aciona a anuência do Inmetro na importação; e <b>(2) eficiência energética (etiqueta ENCE)</b> —
+          que para refrigeração <b>comercial ainda NÃO é obrigatória</b> (projeto MME/Procel, em implantação). A etiqueta
+          A/B/C nova de 2026 é do programa <b>doméstico</b> (Portaria 332/2021) e <b>não</b> se aplica ao seu produto.
+        </div>
+      </div>
+    </section>
+
+    <!-- NCM -->
+    <section class="section" id="ncm">
+      <div class="container">
+        <h2>Sugestão de NCM (classificação fiscal)</h2>
+        <p class="sub">
+          O produto fica na posição <b>84.18</b>, subposição <b>8418.50</b> — "móveis (vitrines, balcões e semelhantes)
+          para conservação <i>e exposição</i> de produtos, que incorporam equipamento de frio". É exatamente a definição
+          de um <b>expositor refrigerado comercial</b>. O desdobramento depende de o equipamento <b>resfriar</b> ou
+          <b>congelar</b>.
+        </p>
+
+        <div class="table-wrap">
+          <table class="ncm">
+            <thead>
+              <tr>
+                <th>NCM</th>
+                <th>Descrição / quando se aplica</th>
+                <th>Imposto de Importação (II)*</th>
+                <th>Recomendação</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="code">8418.50.90</span></td>
+                <td><b>Expositor / vitrine refrigerado comercial (resfriado)</b> — gabinete vertical de porta de vidro para conservar <i>e expor</i> produtos refrigerados (mercado, padaria, bar, conveniência). <b>É o seu produto.</b></td>
+                <td><b>12,6%</b></td>
+                <td><span class="pill rec">Recomendado</span></td>
+              </tr>
+              <tr>
+                <td><span class="code">8418.50.10</span></td>
+                <td><b>Expositor comercial congelador (freezer)</b> — mesma família, usar <i>somente</i> se o equipamento <b>congela</b> (produtos congelados) em vez de apenas resfriar.</td>
+                <td>Validar na TIPI/TEC</td>
+                <td><span class="pill alt">Se congela</span></td>
+              </tr>
+              <tr>
+                <td><span class="code">8418.69.99</span></td>
+                <td><b>Refrigerador comercial de porta cega</b> (sem exposição — uso em cozinha/estoque). Não é o caso de um <i>expositor</i>, mas fica como referência se o modelo não tiver função de exposição.</td>
+                <td>Validar na TIPI/TEC</td>
+                <td><span class="pill alt">Variação</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p style="color:var(--text-mute); font-size:13.5px; margin-top:14px;">
+          As geladeiras <b>residenciais</b> (8418.21.00 / 8418.29.00, II 18%) ficam de fora — são produto e programa de
+          Inmetro distintos e não se aplicam a um expositor comercial.
+        </p>
+
+        <div class="callout info">
+          <span class="tag">ℹ️ Como ler isso</span><br/>
+          O <b>II</b> incide sobre o valor aduaneiro (mercadoria + frete + seguro). Além dele entram <b>IPI</b>,
+          <b>PIS-Importação</b> (padrão 2,1%), <b>COFINS-Importação</b> (padrão ~9,65%) e o <b>ICMS</b> do seu estado.
+          As alíquotas de IPI/PIS/COFINS variam por item e podem mudar — por isso marcamos "validar na TIPI/TEC".
+          Para ver o <b>custo final nacionalizado</b> com todos os tributos somados, use a calculadora ao final.
+        </div>
+
+        <p style="color:var(--text-mute); font-size:13px; margin-top:8px;">
+          *Alíquotas de referência (TEC/TIPI vigentes em 2026), sujeitas a alteração e à confirmação do enquadramento.
+          A classificação final deve ser validada com base na ficha técnica do produto.
+        </p>
+      </div>
+    </section>
+
+    <!-- INMETRO PASSO A PASSO -->
+    <section class="section" id="inmetro">
+      <div class="container">
+        <h2>Inmetro: como funciona, passo a passo</h2>
+        <p class="sub">
+          O Inmetro <b>não é uma taxa</b> que se paga na hora nem um carimbo que se compra. É um <b>processo de
+          comprovação</b> de que o produto é <b>seguro</b> (segurança elétrica). Quando exigido para o seu expositor, é
+          esse o caminho — abaixo, a sequência completa, do começo ao fim.
+        </p>
+
+        <ol class="timeline">
+          <li class="tl-item">
+            <span class="tl-dot">1</span>
+            <h3>Identificar o produto e checar o "destaque" no Siscomex</h3>
+            <p>Confirma-se o NCM (8418.50.90) e o <b>destaque</b> no Simulador de Tratamento Administrativo. É aqui que se decide: se o uso for <b>exclusivamente comercial</b>, pode caber o <b>código 999</b> (dispensa da anuência); se for similar a doméstico, segue a <b>certificação de segurança (Port. 148/2022)</b>.</p>
+            <span class="who">Você + despachante / consultoria</span>
+          </li>
+          <li class="tl-item">
+            <span class="tl-dot">2</span>
+            <h3>Escolher o organismo certificador (OCP)</h3>
+            <p>O Inmetro não certifica diretamente. Contrata-se um OCP — Organismo de Certificação de Produtos — acreditado pelo Inmetro para esse tipo de produto.</p>
+            <span class="who">Importador contrata o OCP</span>
+          </li>
+          <li class="tl-item">
+            <span class="tl-dot">3</span>
+            <h3>Ensaios em laboratório</h3>
+            <p>Uma amostra do produto é testada em laboratório acreditado — <b>segurança elétrica</b> (norma da série IEC/NBR 60335). Em alguns casos há também auditoria da fábrica.</p>
+            <span class="who">Laboratório acreditado</span>
+          </li>
+          <li class="tl-item">
+            <span class="tl-dot">4</span>
+            <h3>Certificação e Selo de Conformidade do Inmetro</h3>
+            <p>Aprovado nos ensaios, o OCP emite o <b>certificado de conformidade</b> e o produto passa a ostentar o <b>Selo de Identificação da Conformidade</b> do Inmetro (segurança), em cada unidade.</p>
+            <span class="who">OCP / Inmetro</span>
+          </li>
+          <li class="tl-item">
+            <span class="tl-dot">5</span>
+            <h3>Licença de Importação (LI)</h3>
+            <p>Com a certificação válida, o importador abre a Licença de Importação no Portal Siscomex antes do embarque/desembaraço.</p>
+            <span class="who">Importador / despachante</span>
+          </li>
+          <li class="tl-item">
+            <span class="tl-dot">6</span>
+            <h3>Anuência do Inmetro</h3>
+            <p>O Inmetro "libera" a importação no sistema. A anuência só sai com registro/certificado válido — sem isso, a carga não passa.</p>
+            <span class="who">Inmetro (anuente)</span>
+          </li>
+          <li class="tl-item">
+            <span class="tl-dot">7</span>
+            <h3>Desembaraço aduaneiro</h3>
+            <p>Com anuência e impostos recolhidos, a mercadoria é liberada na alfândega e nacionalizada.</p>
+            <span class="who">Receita Federal</span>
+          </li>
+          <li class="tl-item">
+            <span class="tl-dot">8</span>
+            <h3>Venda ou locação no Brasil</h3>
+            <p>Produto certificado e regularizado, pronto para ir ao mercado — para revenda ou para a frota de locação.</p>
+            <span class="who">Você 🎉</span>
+          </li>
+        </ol>
+
+        <div class="callout info" style="margin-top:30px;">
+          <span class="tag">ℹ️ Qual portaria se aplica — e o detalhe que decide (o "destaque")</span><br/>
+          <b>1) Segurança (a regra que existe):</b> a Portaria Inmetro <b>nº 148/2022</b> (sucessora da nº 371/2009) institui
+          a certificação compulsória de <b>segurança</b> de eletrodomésticos e similares. O NCM <b>8418.50.90</b> realmente
+          tem anuência do Inmetro — <b>mas por meio de "destaque"</b>.<br/>
+          <b>2) O que é o destaque:</b> como um mesmo NCM abrange produtos domésticos e comerciais, o Inmetro/DECEX
+          restringiu a exigência aos itens de <b>uso doméstico/similar</b>. Se o expositor é de <b>uso exclusivamente
+          comercial</b>, ele tende a <b>não se enquadrar no destaque</b> — nesse caso o importador apõe o <b>código 999</b>
+          e a mercadoria fica <b>dispensada da anuência</b> do Inmetro. Se for tratado como similar a doméstico (ex.:
+          cervejeiras e alguns coolers de bebida), a anuência e a certificação <b>são exigidas</b>.<br/>
+          <b>3) Eficiência energética:</b> segue <b>não obrigatória</b> para refrigeração comercial (projeto MME/Procel,
+          MEPS ~2025+). A etiqueta A/B/C de 2026 (Portaria nº 332/2021) é <b>doméstica</b>.<br/>
+          <b>4) Como confirmar:</b> rode o <b>Simulador de Tratamento Administrativo</b> (Portal Único Siscomex) para o
+          NCM 8418.50.90, leia o texto do <b>destaque</b> e valide com despachante/OCP. ⚠️ O código 999 só vale se o uso
+          for <b>realmente comercial</b> — aplicá-lo de forma indevida é infração aduaneira.
+        </div>
+      </div>
+    </section>
+
+    <!-- PRAZOS E CUSTOS -->
+    <section class="section" id="custos">
+      <div class="container">
+        <h2>Prazos e custos da certificação</h2>
+        <p class="sub">Estimativas de mercado para a etapa de Inmetro (não incluem impostos de importação, frete e seguro).</p>
+        <div class="cost-grid">
+          <div class="cost">
+            <div class="big">3–9 meses</div>
+            <div class="lbl">Tempo total do processo, dependendo dos ensaios e de auditoria de fábrica.</div>
+          </div>
+          <div class="cost">
+            <div class="big">R$ 12k–18k</div>
+            <div class="lbl">Certificação (linha branca): honorários do OCP + laboratório + taxas Inmetro.</div>
+          </div>
+          <div class="cost">
+            <div class="big">Selo</div>
+            <div class="lbl">Selo de Conformidade do Inmetro (segurança) em cada unidade — inclusive nas alugadas.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCAÇÃO X REVENDA -->
+    <section class="section" id="locacao-revenda">
+      <div class="container">
+        <h2>Locação x Revenda: muda alguma coisa no Inmetro?</h2>
+        <p class="sub">A dúvida mais comum. Resposta curta: a <b>certificação é a mesma</b> — o que muda é o modelo de negócio depois.</p>
+        <div class="two-col">
+          <div class="lane">
+            <h3>🏷️ Revenda</h3>
+            <ul>
+              <li>O produto vai ao consumidor: precisa estar <b>certificado</b> (segurança) com o Selo do Inmetro.</li>
+              <li>Cada unidade comercializada deve portar o Selo de Conformidade.</li>
+              <li>Importa-se com Licença de Importação + anuência do Inmetro.</li>
+            </ul>
+          </div>
+          <div class="lane">
+            <h3>🔄 Locação</h3>
+            <ul>
+              <li>Mesmo sendo "frota própria", o produto está sendo <b>comercializado</b> (alugado) — então <b>também</b> exige Inmetro.</li>
+              <li>O Selo de Conformidade acompanha o equipamento durante toda a locação.</li>
+              <li>Não há atalho: o caminho de certificação e importação é o mesmo da revenda.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHECKLIST -->
+    <section class="section" id="checklist">
+      <div class="container">
+        <h2>Pontos para guardar (cliente leigo)</h2>
+        <p class="sub">Cinco verdades que evitam dor de cabeça e mercadoria parada no porto.</p>
+        <ul class="checklist">
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#00D4B4" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span><b>Comece pelo Inmetro antes de comprar.</b> A certificação leva meses; geladeira que chega sem registro trava no porto.</span>
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#00D4B4" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span><b>Não dá para pular a etapa.</b> Sem anuência do Inmetro, não há liberação aduaneira.</span>
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#00D4B4" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span><b>O eixo obrigatório é a SEGURANÇA</b> (Portaria 148/2022), não a energia (ENCE ainda não exigida p/ comercial) — e mesmo a segurança vem por <b>destaque</b> de uso doméstico/similar.</span>
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#00D4B4" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span><b>O destaque decide:</b> uso exclusivamente comercial pode usar o <b>código 999</b> (dispensa da anuência); confirme no Simulador do Siscomex. Uso indevido do 999 é infração.</span>
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#00D4B4" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span><b>NCM 8418.50.90</b> para expositor resfriado (II 12,6%); use 8418.50.10 só se o equipamento congelar.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" id="cta">
+      <div class="container cta-inner">
+        <h2>Quer o custo final nacionalizado deste produto?</h2>
+        <p>Simule o valor com todos os impostos somados (II, IPI, PIS, COFINS e ICMS), frete e despesas — em segundos.</p>
+        <a class="btn btn-primary cta-button" href="https://calculadora.lighthouseimports.com.br/">Simular custo de importação</a>
+      </div>
+    </section>
+
+    <!-- FONTES / DISCLAIMER -->
+    <section class="section" id="fontes">
+      <div class="container">
+        <h2 style="font-size:22px;">Fontes e observações</h2>
+        <div class="callout info">
+          <span class="tag">ℹ️ Aviso</span><br/>
+          Este material é informativo e foi preparado para orientação inicial. A classificação fiscal (NCM), as alíquotas
+          e o enquadramento no Inmetro devem ser <b>confirmados com base na ficha técnica do produto</b> e na legislação
+          vigente no momento do despacho. Consulte sua consultoria/despachante antes de fechar a operação.
+        </div>
+        <ul class="sources">
+          <li><a href="https://www.gov.br/inmetro/pt-br/centrais-de-conteudo/noticias/nova-etiqueta-do-inmetro-para-refrigeradores-entra-em-vigor-a-partir-de-1o-de-janeiro-de-2026" target="_blank" rel="noopener">Inmetro — Nova etiqueta de refrigeradores em vigor a partir de 1º/jan/2026</a></li>
+          <li><a href="https://www.gov.br/inmetro/pt-br/assuntos/avaliacao-da-conformidade/anuencia-para-importacao/como-solicitar" target="_blank" rel="noopener">Inmetro — Como solicitar anuência para importação</a></li>
+          <li><a href="http://www.inmetro.gov.br/legislacao/detalhe.asp?seq_classe=1&seq_ato=2961" target="_blank" rel="noopener">Inmetro — Portaria nº 148/2022 (certificação de segurança de eletrodomésticos e similares; sucessora da 371/2009)</a></li>
+          <li><a href="http://www.inmetro.gov.br/qualidade/anuencia_inmetro.asp" target="_blank" rel="noopener">Inmetro — Produtos sujeitos a etiquetagem/certificação compulsória e anuência</a></li>
+          <li><a href="https://www.gov.br/siscomex/pt-br/informacoes/tratamento-administrativos/tratamento-administrativo-na-importacao" target="_blank" rel="noopener">Siscomex — Tratamento administrativo na importação (Simulador, Portal Único)</a></li>
+          <li><a href="https://www.gov.br/inmetro/pt-br/acesso-a-informacao/perguntas-frequentes/avaliacao-da-conformidade/anuencia-para-importacao/informacao-sobre-classificacao-de-ncm" target="_blank" rel="noopener">Inmetro — Destaques de NCM e código 999 (dispensa de anuência quando o produto não se refere à situação do destaque)</a></li>
+          <li><a href="https://www.gov.br/mme/pt-br/assuntos/conselhos-e-comites/cgiee/refrigeradores-comerciais-eficientes-no-brasil" target="_blank" rel="noopener">MME — Refrigeradores Comerciais Eficientes no Brasil (projeto de MEPS/etiqueta — ainda não obrigatório)</a></li>
+          <li><a href="https://tributos.io/ncm/classificacao/item/84185090-outros" target="_blank" rel="noopener">Tributos.io — NCM 8418.50.90 (expositor refrigerado comercial)</a></li>
+          <li><a href="https://tributos.io/ncm/classificacao/item/84182900--outros" target="_blank" rel="noopener">Tributos.io — NCM 8418.29.00 (refrigerador doméstico)</a></li>
+          <li><a href="https://tributodevido.com.br/portal/classificacao-fiscal-de-expositores-refrigerados-comerciais/" target="_blank" rel="noopener">Tributo Devido — Classificação fiscal de expositores refrigerados comerciais (NCM 8418.50.90)</a></li>
+          <li><a href="https://yescert.com.br/blog/inmetro/certificacao-inmetro-eletrodomesticos/" target="_blank" rel="noopener">Yes Certificações — Certificação Inmetro de eletrodomésticos (processo para importadores)</a></li>
+          <li><a href="https://intimelogistica.com.br/artigos/inmetro-certificacao-compulsoria-importacao" target="_blank" rel="noopener">In Time Logística — Inmetro na importação: certificação compulsória e ensaios</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="brand">
+        <span class="brand-text">Lighthouse <span class="brand-ia">Imports</span></span>
+      </div>
+      <p class="footer-copy">© <span id="year"></span> Lighthouse Imports · Estudo informativo de importação.</p>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
