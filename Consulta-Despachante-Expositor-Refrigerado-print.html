@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<title>Consulta ao Despachante — Importação de Refrigerador Expositor Comercial</title>
+<style>
+  @page {
+    size: A4;
+    margin: 15mm 15mm 16mm 15mm;
+    @bottom-center {
+      content: "Lighthouse Imports · Consulta técnica de importação · pág. " counter(page) " / " counter(pages);
+      font-family: Inter, Arial, sans-serif; font-size: 8pt; color: #8a93a6;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { font-family: Inter, "Helvetica Neue", Arial, sans-serif; color: #1c2433; font-size: 9.8pt; line-height: 1.5; margin: 0; }
+  h1,h2,h3 { color: #0b1b3b; margin: 0; letter-spacing: -0.01em; }
+  p { margin: 0 0 6px; }
+  b { color: #0b1b3b; }
+  .muted { color: #6b7488; }
+  a { color: #1366d6; text-decoration: none; }
+
+  .head { border-bottom: 3px solid #1478d6; padding-bottom: 12px; margin-bottom: 14px; }
+  .brand { display:flex; align-items:center; gap:9px; margin-bottom: 12px; }
+  .brand .logo { width: 24px; height: 24px; border-radius: 7px; background: linear-gradient(135deg,#2d8bff,#00d4b4); display:inline-block; }
+  .brand .name { font-size: 12.5pt; font-weight: 800; color:#0b1b3b; }
+  .brand .name span { color:#00a892; }
+  .eyebrow { font-size: 8pt; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #00a892; }
+  .head h1 { font-size: 18pt; line-height: 1.12; margin: 6px 0 8px; }
+  .head .intro { font-size: 9.8pt; color:#3a4356; }
+
+  .facts { display:flex; flex-wrap:wrap; gap: 8px; margin: 12px 0 0; }
+  .fact { flex:1 1 30%; border:1px solid #e1e7f0; border-radius: 8px; padding: 9px 11px; background:#f8fafd; }
+  .fact .k { font-size: 7.3pt; text-transform: uppercase; letter-spacing: 0.08em; color:#8a93a6; margin-bottom: 2px; }
+  .fact .v { font-size: 11pt; font-weight: 800; color:#0b1b3b; }
+  .fact .d { font-size: 8pt; color:#5a6376; margin-top: 2px; }
+
+  .section { margin-top: 16px; break-inside: avoid; }
+  .section > h2 { font-size: 12.5pt; padding-bottom: 5px; border-bottom: 1px solid #e3e8f1; margin-bottom: 9px; }
+
+  .callout { border-radius: 8px; padding: 10px 12px; margin: 10px 0; font-size: 9.2pt; border-left: 4px solid; }
+  .callout .tag { font-weight: 800; font-size: 7.8pt; letter-spacing: 0.04em; text-transform: uppercase; display:block; margin-bottom: 3px; }
+  .info { background:#eef5ff; border-color:#2d8bff; } .info .tag { color:#1a64c2; }
+  .warn { background:#fff8e8; border-color:#f0b429; } .warn .tag { color:#a9760a; }
+
+  table { width:100%; border-collapse: collapse; font-size: 9pt; margin-top: 2px; }
+  th, td { text-align:left; padding: 7px 9px; border-bottom: 1px solid #e3e8f1; vertical-align: top; }
+  thead th { font-size: 7.4pt; text-transform: uppercase; letter-spacing: 0.06em; color:#8a93a6; background:#f3f6fb; }
+  td .code { font-weight: 800; color:#0b1b3b; }
+
+  ol.ask { margin: 4px 0 0; padding: 0; counter-reset: q; list-style: none; }
+  ol.ask li { position: relative; padding: 9px 0 9px 34px; border-bottom: 1px dashed #e3e8f1; break-inside: avoid; }
+  ol.ask li:last-child { border-bottom: 0; }
+  ol.ask li::before { counter-increment: q; content: counter(q); position:absolute; left:0; top:8px; width: 22px; height: 22px;
+    border-radius: 6px; background: linear-gradient(135deg,#2d8bff,#00d4b4); color:#04132b; font-weight:800; font-size:9.5pt;
+    display:flex; align-items:center; justify-content:center; }
+  ol.ask .q { font-weight: 700; color:#0b1b3b; font-size: 9.6pt; }
+  ol.ask .why { color:#5a6376; font-size: 8.6pt; margin-top: 1px; }
+
+  .sources { font-size: 8pt; color:#6b7488; margin: 4px 0 0; padding-left: 16px; }
+  .sources li { margin-bottom: 2px; }
+  .disclaimer { font-size: 8pt; color:#8a93a6; margin-top: 8px; }
+</style>
+</head>
+<body>
+
+  <div class="head">
+    <div class="brand"><span class="logo"></span><span class="name">Lighthouse <span>Imports</span></span></div>
+    <div class="eyebrow">Consulta técnica · Despachante aduaneiro</div>
+    <h1>Importação de refrigerador expositor comercial — pontos a confirmar</h1>
+    <p class="intro">Prezado(a) despachante, segue o resumo técnico do produto e as <b>questões objetivas</b> que
+      precisamos confirmar antes de fechar a operação — principalmente o <b>tratamento administrativo</b> do NCM e o
+      enquadramento (ou não) na anuência do Inmetro. Agradecemos o parecer e a confirmação documental.</p>
+    <div class="facts">
+      <div class="fact"><div class="k">Produto</div><div class="v">Expositor refrigerado comercial</div><div class="d">Gabinete vertical, porta de vidro, autosserviço; conservação e exposição de produtos resfriados.</div></div>
+      <div class="fact"><div class="k">NCM proposto</div><div class="v">8418.50.90</div><div class="d">Subposição 8418.50 (móveis frigoríficos p/ conservação e exposição). Resfriado.</div></div>
+      <div class="fact"><div class="k">Finalidade</div><div class="v">Locação / revenda</div><div class="d">Operação de importação para comercialização (aluguel ou venda) no mercado interno.</div></div>
+    </div>
+  </div>
+
+  <!-- ENTENDIMENTO PRELIMINAR -->
+  <div class="section">
+    <h2>Entendimento preliminar (a validar)</h2>
+    <div class="callout info">
+      <span class="tag">Tratamento administrativo / anuência Inmetro</span>
+      Pela nossa pesquisa, o NCM <b>8418.50.90</b> (e o 8418.50.10) consta no licenciamento <b>não automático</b>, prévio
+      ao embarque, com anuência do <b>Inmetro</b>, para fins de <b>certificação compulsória de segurança</b> (Portaria
+      Inmetro nº 371/2009, hoje <b>nº 148/2022</b>). Contudo, a exigência é veiculada por <b>destaque</b> de NCM,
+      restrito a produtos de <b>uso doméstico/similar</b>. Para mercadoria que <b>não</b> se refere à situação do destaque
+      (uso exclusivamente comercial), entendemos caber a aposição do <b>código 999</b>, com <b>dispensa</b> da anuência.
+      Solicitamos confirmação do texto do destaque vigente e do enquadramento.
+    </div>
+    <div class="callout warn">
+      <span class="tag">Eficiência energética (ENCE)</span>
+      Para refrigeração <b>comercial</b>, entendemos que a etiquetagem energética (ENCE) <b>ainda não é compulsória</b>
+      (programa do MME/Procel em implantação). A nova etiqueta A/B/C de 2026 (Portaria nº 332/2021) é do programa
+      <b>doméstico</b> e não se aplicaria. Favor confirmar se há qualquer exigência de etiquetagem para este item.
+    </div>
+  </div>
+
+  <!-- PERGUNTAS -->
+  <div class="section">
+    <h2>Pontos a confirmar</h2>
+    <ol class="ask">
+      <li>
+        <div class="q">Classificação fiscal (NCM)</div>
+        <div class="why">Confirmar 8418.50.90 (expositor resfriado) pela ficha técnica — ou 8418.50.10 se houver função de congelamento (freezer), ou outro item caso não exerça função de exposição.</div>
+      </li>
+      <li>
+        <div class="q">Tratamento administrativo no Portal Único Siscomex</div>
+        <div class="why">No Simulador de Tratamento Administrativo, qual o tratamento vigente do NCM 8418.50.90 na importação? Exige LI? Quais anuentes (Inmetro)? Licenciamento automático ou não automático?</div>
+      </li>
+      <li>
+        <div class="q">Texto do destaque e enquadramento</div>
+        <div class="why">Qual o texto do(s) destaque(s) do NCM? O produto (expositor de uso exclusivamente comercial) se enquadra no destaque (uso doméstico/similar) — exigindo anuência — ou cabe o código 999 com dispensa da anuência do Inmetro?</div>
+      </li>
+      <li>
+        <div class="q">Se exigida anuência: certificação de segurança</div>
+        <div class="why">Confirmar requisito de certificação compulsória de segurança (Portaria 148/2022) por OCP acreditado: ensaios aplicáveis (série IEC/NBR 60335), necessidade de auditoria de fábrica, prazo e custo estimados.</div>
+      </li>
+      <li>
+        <div class="q">Prazo da anuência (se aplicável)</div>
+        <div class="why">Confirmar fluxo da LI prévia ao embarque e prazo de anuência do Inmetro via Orquestra (processo P070), para planejarmos o embarque.</div>
+      </li>
+      <li>
+        <div class="q">Tributação na importação</div>
+        <div class="why">Confirmar alíquotas vigentes para o NCM: II (referência ~12,6%), IPI, PIS-Importação, COFINS-Importação e ICMS do estado de desembaraço. Há ex-tarifário ou benefício aplicável?</div>
+      </li>
+      <li>
+        <div class="q">Outros anuentes / exigências</div>
+        <div class="why">Há qualquer outra anuência ou exigência (além do Inmetro) para este NCM/produto na operação pretendida?</div>
+      </li>
+    </ol>
+  </div>
+
+  <!-- TRIBUTAÇÃO REFERÊNCIA -->
+  <div class="section">
+    <h2>Classificação e tributação — referência</h2>
+    <table>
+      <thead><tr><th style="width:18%">NCM</th><th>Descrição</th><th style="width:18%">II (ref.)*</th></tr></thead>
+      <tbody>
+        <tr><td><span class="code">8418.50.90</span></td><td>Expositor/vitrine refrigerado comercial (resfriado) — proposto.</td><td>~12,6%</td></tr>
+        <tr><td><span class="code">8418.50.10</span></td><td>Expositor comercial congelador (freezer) — se aplicável.</td><td>a confirmar</td></tr>
+        <tr><td><span class="code">8418.69.99</span></td><td>Refrigerador comercial sem função de exposição (porta cega).</td><td>a confirmar</td></tr>
+      </tbody>
+    </table>
+    <p class="disclaimer">*II de referência (TEC), sujeito a confirmação na TEC/TIPI vigente no despacho. PIS-Importação (~2,1%)
+      e COFINS-Importação (~9,65%) padrão, a confirmar; ICMS conforme UF de desembaraço.</p>
+  </div>
+
+  <!-- FONTES -->
+  <div class="section">
+    <h2 style="font-size:11pt;">Referências consultadas</h2>
+    <ul class="sources">
+      <li>Inmetro — Portaria nº 148/2022 (certificação de segurança de eletrodomésticos e similares; sucessora da 371/2009).</li>
+      <li>Inmetro — Anuência para importação; destaques de NCM e código 999 (dispensa quando o produto não se refere ao destaque).</li>
+      <li>Siscomex — Tratamento administrativo na importação (Simulador de Tratamento Administrativo, Portal Único).</li>
+      <li>MME — Refrigeradores Comerciais Eficientes no Brasil (MEPS/etiqueta comercial — projeto, ainda não obrigatório).</li>
+      <li>Solução de classificação fiscal — expositores refrigerados comerciais na NCM 8418.50.90.</li>
+    </ul>
+    <p class="disclaimer">Material preparado para orientação e alinhamento técnico. As confirmações de classificação, tratamento
+      administrativo, anuência e tributação devem ser feitas pelo despachante/consultoria com base na ficha técnica e na
+      legislação vigente no momento do despacho.</p>
+  </div>
+
+</body>
+</html>
