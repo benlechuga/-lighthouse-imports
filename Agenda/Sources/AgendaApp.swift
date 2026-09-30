@@ -11,6 +11,7 @@ struct AgendaApp: App {
     init() {
         NotificationManager.shared.container = container
         NotificationManager.shared.setup()
+        WatchSync.shared.start()
     }
 
     var body: some Scene {

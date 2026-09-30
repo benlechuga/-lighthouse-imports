@@ -45,8 +45,9 @@ struct ContentView: View {
             .sheet(item: $editing) { EventEditor(event: $0) }
             .task { await refreshAuth() }
             .onChange(of: scenePhase) { _, phase in
-                if phase == .active { Task { await refreshAuth() }; NotificationManager.shared.rescheduleAll(events) }
+                if phase == .active { Task { await refreshAuth() }; NotificationManager.shared.rescheduleAll(events); WatchSync.shared.sync(events) }
             }
+            .onChange(of: events.map(\.signature)) { _, _ in WatchSync.shared.sync(events) }
         }
     }
 

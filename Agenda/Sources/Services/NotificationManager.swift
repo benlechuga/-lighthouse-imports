@@ -82,7 +82,7 @@ final class NotificationManager: NSObject, UNUserNotificationCenterDelegate {
                 guard let context = container?.mainContext,
                       let event = try? context.fetch(FetchDescriptor<Event>(predicate: #Predicate { $0.id == id })).first
                 else { return }
-                if event.repeatRule == .none { event.isDone = true; cancel(event); try? context.save() }
+                if event.repeatRule == .none { event.isDone = true; cancel(event); try? context.save(); WatchSync.shared.syncFromContainer() }
             }
         case snoozeAction:
             let snooze = UNMutableNotificationContent()

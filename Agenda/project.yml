@@ -3,11 +3,15 @@ options:
   bundleIdPrefix: com.example
   deploymentTarget:
     iOS: "17.0"
+    watchOS: "10.0"
 targets:
   Agenda:
     type: application
     platform: iOS
-    sources: [Sources]
+    sources:
+      - Sources
+    dependencies:
+      - target: AgendaWatch
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.example.agenda
@@ -17,5 +21,53 @@ targets:
         INFOPLIST_KEY_UILaunchScreen_Generation: YES
         INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone: UIInterfaceOrientationPortrait
         TARGETED_DEVICE_FAMILY: "1"
+        MARKETING_VERSION: "1.0"
+        CURRENT_PROJECT_VERSION: "1"
+
+  AgendaWatch:
+    type: application
+    platform: watchOS
+    sources:
+      - Watch
+      - Sources/Shared
+    dependencies:
+      - target: AgendaWatchWidget
+    entitlements:
+      path: Watch/AgendaWatch.entitlements
+      properties:
+        com.apple.security.application-groups: [group.com.example.agenda]
+    info:
+      path: Watch/Info.plist
+      properties:
+        CFBundleDisplayName: Agenda
+        WKApplication: true
+        WKCompanionAppBundleIdentifier: com.example.agenda
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.example.agenda.watchkitapp
+        SWIFT_VERSION: "5.9"
+        MARKETING_VERSION: "1.0"
+        CURRENT_PROJECT_VERSION: "1"
+
+  AgendaWatchWidget:
+    type: app-extension
+    platform: watchOS
+    sources:
+      - WatchWidget
+      - Sources/Shared
+    entitlements:
+      path: WatchWidget/AgendaWatchWidget.entitlements
+      properties:
+        com.apple.security.application-groups: [group.com.example.agenda]
+    info:
+      path: WatchWidget/Info.plist
+      properties:
+        CFBundleDisplayName: Agenda
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.example.agenda.watchkitapp.widget
+        SWIFT_VERSION: "5.9"
         MARKETING_VERSION: "1.0"
         CURRENT_PROJECT_VERSION: "1"
