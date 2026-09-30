@@ -1,0 +1,14 @@
+{
+  "name": "agenda-pwa",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "test": "node test/run.mjs",
+    "keys": "node scripts/keys.mjs"
+  },
+  "dependencies": {
+    "web-push": "^3.6.7"
+  }
+}

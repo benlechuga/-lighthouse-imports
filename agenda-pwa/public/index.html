@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Agenda</title>
+  <meta name="theme-color" content="#0a84ff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Agenda">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="icon" href="/icon-192.png">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Agenda</h1>
+    <span id="sync" class="sync" title="Sincronização"></span>
+  </header>
+  <div class="search"><input id="q" type="search" placeholder="Buscar" autocomplete="off"></div>
+
+  <div id="banner" class="banner" hidden></div>
+  <main id="list"></main>
+  <p id="empty" class="empty" hidden>Sem compromissos.<br>Toque em <b>+</b> para criar o primeiro.</p>
+
+  <button id="add" class="fab" aria-label="Novo compromisso">+</button>
+
+  <dialog id="dlg">
+    <form id="form" method="dialog">
+      <div class="bar">
+        <button type="button" id="cancel" class="link">Cancelar</button>
+        <strong id="dlgTitle">Novo</strong>
+        <button type="submit" class="link strong">Salvar</button>
+      </div>
+      <label class="card"><input id="fTitle" placeholder="Título" required maxlength="200" autocomplete="off"></label>
+      <label class="card"><textarea id="fNotes" placeholder="Notas" rows="3" maxlength="2000"></textarea></label>
+      <div class="card">
+        <label class="row">Data e hora <input id="fStart" type="datetime-local" required></label>
+        <label class="row">Repetir
+          <select id="fRepeat">
+            <option value="none">Nunca</option><option value="daily">Todo dia</option>
+            <option value="weekly">Toda semana</option><option value="monthly">Todo mês</option>
+            <option value="yearly">Todo ano</option>
+          </select>
+        </label>
+        <label class="row">Avisar
+          <select id="fLead">
+            <option value="0">Na hora</option><option value="5">5 min antes</option>
+            <option value="10">10 min antes</option><option value="15">15 min antes</option>
+            <option value="30">30 min antes</option><option value="60">1 h antes</option>
+            <option value="120">2 h antes</option><option value="1440">1 dia antes</option>
+          </select>
+        </label>
+      </div>
+      <button type="button" id="del" class="danger card" hidden>Apagar compromisso</button>
+    </form>
+  </dialog>
+
+  <script type="module" src="/app.js"></script>
+</body>
+</html>
