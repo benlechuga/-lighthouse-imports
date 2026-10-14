@@ -1,0 +1,5 @@
+{
+  "name": "lighthouse-guardiao",
+  "version": "0.1.0",
+  "description": "Bloqueia comandos perigosos (push forçado, rm -rf, reset --hard, apagar arquivos do site) e avisa na hora."
+}

@@ -1,0 +1,6 @@
+{
+  "name": "lighthouse-painel",
+  "version": "0.1.0",
+  "description": "Painel ao vivo do site Lighthouse Imports: branch, mudanças pendentes, último commit e botão de publicar.",
+  "types": "./types/index.d.ts"
+}

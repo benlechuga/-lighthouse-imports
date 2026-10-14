@@ -6,6 +6,26 @@
       "name": "painel",
       "source": "./mods/painel",
       "description": "Painel ao lado da conversa: tarefas, subagentes e notas do vault alteradas hoje."
+    },
+    {
+      "name": "lighthouse-painel",
+      "source": "./.claude/skills/lighthouse-painel",
+      "description": "Painel do site Lighthouse Imports: branch, mudanças pendentes, último commit e botão Publicar."
+    },
+    {
+      "name": "lighthouse-guardiao",
+      "source": "./.claude/skills/lighthouse-guardiao",
+      "description": "Bloqueia push forçado, reset hard, remoção recursiva e apagar arquivos do site."
+    },
+    {
+      "name": "lighthouse-faixa",
+      "source": "./.claude/skills/lighthouse-faixa",
+      "description": "Faixa acima do prompt com branch, mudanças e status de publicação do site."
+    },
+    {
+      "name": "lighthouse-site-check",
+      "source": "./.claude/skills/lighthouse-site-check",
+      "description": "Comando /site-check: valida index.html, links, sitemap, robots, manifest e script.js."
     }
   ]
 }
