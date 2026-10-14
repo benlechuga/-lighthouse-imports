@@ -1,0 +1,10 @@
+{
+  "name": "lighthouse-mods",
+  "owner": { "name": "benlechuga" },
+  "plugins": [
+    { "name": "lighthouse-painel", "source": "./.claude/skills/lighthouse-painel" },
+    { "name": "lighthouse-guardiao", "source": "./.claude/skills/lighthouse-guardiao" },
+    { "name": "lighthouse-faixa", "source": "./.claude/skills/lighthouse-faixa" },
+    { "name": "lighthouse-site-check", "source": "./.claude/skills/lighthouse-site-check" }
+  ]
+}

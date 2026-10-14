@@ -1,0 +1,5 @@
+{
+  "name": "lighthouse-site-check",
+  "version": "0.1.0",
+  "description": "Comando /site-check: valida index.html, links locais, sitemap, robots, manifest e script.js do site Lighthouse Imports."
+}

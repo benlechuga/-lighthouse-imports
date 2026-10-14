@@ -1,0 +1,6 @@
+{
+  "name": "lighthouse-faixa",
+  "version": "0.1.0",
+  "description": "Faixa fixa acima do prompt com branch, mudanças pendentes e status de publicação do site Lighthouse Imports.",
+  "types": "./types/index.d.ts"
+}
