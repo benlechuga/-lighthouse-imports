@@ -1,0 +1,14 @@
+{
+  "name": "painel",
+  "version": "0.1.0",
+  "description": "Painel ao lado da conversa: tarefas em andamento, subagentes e o que fazem, e as notas do vault que mudaram hoje. Atualiza a cada minuto.",
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "vaultPath": {
+      "type": "string",
+      "description": "Caminho absoluto da pasta do vault (Obsidian ou outra pasta de notas .md)",
+      "default": "",
+      "title": "Pasta do vault"
+    }
+  }
+}
