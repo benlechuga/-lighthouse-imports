@@ -106,6 +106,28 @@ test('a result from the builder is logged and framed for the planner model', asy
   expect(received.text).not.toContain('[duo:result')
 })
 
+test('a message inside the engine envelope is parsed, logged and reframed', async ($, on) => {
+  const files: Record<string, string> = {}
+  world(on, files)
+  on('session.send', () => ({ isDelivered: true }))
+
+  await becomePlanner($)
+  const received = await $.session.receive({
+    origin: { kind: 'peer', plugin: 'duo' },
+    text:
+      '<cross-session-message from="uds:/tmp/cc-socks/1.sock" from-name="project-ab" from-plugin="duo">\n' +
+      '[duo:result from builder]\nEtapa 1 concluída: calc.py criado.\n' +
+      '</cross-session-message>',
+  })
+
+  expect(received.consumed).toBeUndefined()
+  expect(received.text).toContain('<cross-session-message from="uds:/tmp/cc-socks/1.sock"')
+  expect(received.text).toContain('construtora devolveu')
+  expect(received.text).toContain('Etapa 1 concluída: calc.py criado.')
+  expect(received.text).toContain('</cross-session-message>')
+  expect(received.text).not.toContain('[duo:result')
+})
+
 test('the pane lists what was exchanged and its field sends a note', async ($, on) => {
   const files: Record<string, string> = {
     [`${HOME}/.claude/duo/builder.json`]: JSON.stringify({ role: 'builder', sessionId: BUILDER_ID, cwd: '/work', at: 1 }),

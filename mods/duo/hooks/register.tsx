@@ -15,7 +15,10 @@ import type { DuoKind, DuoMessage, DuoPeer, DuoRole } from '../types'
 
 const PANE = 'duo'
 const TOOL = 'mcp__duo__send'
-const HEADER = /^\[duo:(plan|result|note) from (planner|builder)\]\n?/
+// The header rides inside the engine's <cross-session-message> envelope, so it
+// is looked for anywhere in the text, and the body ends at the envelope's close.
+const HEADER = /\[duo:(plan|result|note) from (planner|builder)\][ \t]*\r?\n?/
+const ENVELOPE_CLOSE = '</cross-session-message>'
 
 const role = atom({ plugin: 'duo', key: 'role' } as const, null)
 const messages = atom({ plugin: 'duo', key: 'messages' } as const, [])
@@ -75,6 +78,16 @@ async function findPeer($: EngineInterface, r: DuoRole): Promise<DuoPeer | null>
   }
 }
 
+/** Re-reads the other side's registry entry and updates the pane when it changed. */
+async function refreshPeer($: EngineInterface): Promise<DuoPeer | null> {
+  const mine = await read($, role)
+  if (mine === null) return null
+  const found = await findPeer($, mine)
+  const held = await read($, peer)
+  if (found?.sessionId !== held?.sessionId) await update($, peer, () => found)
+  return found
+}
+
 async function remember($: EngineInterface, message: DuoMessage): Promise<void> {
   await update($, messages, list => [...list, message].slice(-200))
 }
@@ -83,7 +96,7 @@ async function remember($: EngineInterface, message: DuoMessage): Promise<void> 
 function frameFor(kind: DuoKind, from: DuoRole, body: string): string {
   if (kind === 'plan') {
     return (
-      `A sessão planejadora mandou um plano. Implemente este plano agora. ` +
+      `A sessão planejadora mandou um plano. Implemente este plano agora, na pasta atual do projeto (o cwd desta sessão, com caminhos relativos). ` +
       `Quando terminar, devolva o resultado com a ferramenta mcp__duo__send (kind: "result"), ` +
       `resumindo o que foi feito, o que foi testado e o que ficou pendente.\n\n${body}`
     )
@@ -127,7 +140,7 @@ async function sendToPeer(
   if (found === null) {
     const reason = `Nenhuma sessão ${labelOf(otherOf(mine))} anunciada. Na outra sessão rode /duo ${otherOf(mine)}.`
     await remember($, { ...base, isDelivered: false, reason })
-    $.ui.toast(`duo: ${reason}`)
+    $.ui.toast(reason)
     return { isDelivered: false, reason }
   }
 
@@ -140,8 +153,8 @@ async function sendToPeer(
     isDelivered: sent.isDelivered,
     ...(sent.isDelivered ? {} : { reason: sent.reason }),
   })
-  if (!sent.isDelivered) $.ui.toast(`duo: não entregue (${sent.reason})`)
-  else $.ui.status(`duo: ${kindLabel(kind)} enviado ao ${labelOf(otherOf(mine))}`)
+  if (!sent.isDelivered) $.ui.toast(`não entregue (${sent.reason})`)
+  else $.ui.status(`${kindLabel(kind)} enviado ao ${labelOf(otherOf(mine))}`)
   return sent.isDelivered ? { isDelivered: true } : { isDelivered: false, reason: sent.reason }
 }
 
@@ -202,10 +215,12 @@ export const register: Register = on => {
     }
     if (mine !== null) {
       await announce($, mine)
-      const found = await findPeer($, mine)
-      await update($, peer, () => found)
+      await refreshPeer($)
       void openPane($)
     }
+    // The other side may announce itself after this session started: keep
+    // the pane's "other side" line current without waiting for a send.
+    $.clock.every(5000, () => void refreshPeer($))
 
     return next(e)
   })
@@ -297,10 +312,14 @@ export const register: Register = on => {
     const mine = await read($, role)
     if (mine === null) return next(e)
 
+    void refreshPeer($)
     const match = HEADER.exec(e.text)
     const kind: DuoKind = match && isKind(match[1]) ? match[1] : 'note'
     const from: DuoRole | 'unknown' = match && isRole(match[2] ?? '') ? (match[2] as DuoRole) : 'unknown'
-    const body = match ? e.text.slice(match[0].length) : e.text
+    const bodyStart = match ? match.index + match[0].length : 0
+    const closeAt = e.text.indexOf(ENVELOPE_CLOSE, bodyStart)
+    const bodyEnd = closeAt === -1 ? e.text.length : closeAt
+    const body = e.text.slice(bodyStart, bodyEnd).trim()
 
     await remember($, {
       id: crypto.randomUUID(),
@@ -312,8 +331,10 @@ export const register: Register = on => {
     })
     $.ui.toast(`duo: ${kindLabel(kind)} recebido do ${labelOf(from)}`)
 
-    if (from === 'unknown') return next(e)
-    return next({ ...e, text: frameFor(kind, from, body) })
+    if (from === 'unknown' || match === null) return next(e)
+    // Keep the engine's envelope around the body; swap only the duo part.
+    const text = e.text.slice(0, match.index) + frameFor(kind, from, body) + '\n' + e.text.slice(bodyEnd)
+    return next({ ...e, text })
   }).catch(($, e, next) => next(e))
 
   on('turn.complete', async ($, e, next) => {
