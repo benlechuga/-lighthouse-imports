@@ -1,0 +1,41 @@
+{
+  "name": "smart-task-routing",
+  "version": "0.1.0",
+  "description": "Manda pedidos simples (renomear, formatar, resumir, git) para um modelo mais barato e mostra qual modelo respondeu",
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "cheapModel": {
+      "type": "string",
+      "default": "haiku",
+      "description": "Modelo barato que atende os pedidos simples (alias como haiku ou id completo)",
+      "title": "Modelo barato"
+    },
+    "classifier": {
+      "type": "string",
+      "options": [
+        "rules",
+        "haiku"
+      ],
+      "default": "rules",
+      "description": "rules: só regras locais (zero custo). haiku: pede ao modelo barato para decidir quando as regras ficam em dúvida",
+      "title": "Classificador"
+    },
+    "cheapEffort": {
+      "type": "string",
+      "options": [
+        "low",
+        "medium",
+        "keep"
+      ],
+      "default": "low",
+      "description": "Esforço de raciocínio pedido ao modelo barato (keep mantém o da sessão)",
+      "title": "Esforço no modelo barato"
+    },
+    "maxCheapSteps": {
+      "type": "number",
+      "default": 8,
+      "description": "Depois de tantas chamadas no modelo barato numa mesma resposta, o resto volta para o modelo principal",
+      "title": "Máximo de passos no modelo barato"
+    }
+  }
+}
