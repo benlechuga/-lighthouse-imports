@@ -5,7 +5,7 @@ repositório eles carregam sozinhos, sem instalar nada.
 
 | Mod | O que faz | Comando |
 | --- | --- | --- |
-| `lighthouse-painel` | Painel lateral com branch, mudanças pendentes, último commit e botão Publicar | `/painel` |
+| `lighthouse-painel` | Painel lateral com branch, mudanças pendentes, último commit e botão Publicar | `/site` |
 | `lighthouse-guardiao` | Bloqueia push forçado, reset hard, remoção recursiva e apagar arquivos do site | (automático) |
 | `lighthouse-faixa` | Faixa acima do prompt com branch, mudanças e status de publicação | `/faixa` |
 | `lighthouse-site-check` | Valida index.html, links locais, sitemap, robots, manifest e script.js | `/site-check` |

@@ -22,7 +22,7 @@ async function refresh($: EngineInterface): Promise<void> {
 export const register: Register = on => {
   on('session.start', async ($, e, next) => {
     await $.command.register({
-      name: 'painel',
+      name: 'site',
       description: 'Abre o painel do site Lighthouse Imports (branch, mudanças, último commit)',
     })
     void $.ui.open({ id: PANE, title: TITLE })
@@ -32,7 +32,7 @@ export const register: Register = on => {
     return next(e)
   })
 
-  on('command.run', { command: 'painel' }, async $ => {
+  on('command.run', { command: 'site' }, async $ => {
     await $.ui.open({ id: PANE, title: TITLE, focus: true })
     await refresh($)
 
