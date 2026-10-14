@@ -1,0 +1,6 @@
+{
+  "name": "duo",
+  "version": "0.1.0",
+  "description": "Two Claude Code sessions on one machine, a planner and a builder, exchange plans and results, with a side pane showing the messages.",
+  "types": "./types/index.d.ts"
+}
