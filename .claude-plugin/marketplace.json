@@ -1,0 +1,11 @@
+{
+  "name": "lighthouse-mods",
+  "owner": { "name": "benlechuga" },
+  "plugins": [
+    {
+      "name": "painel",
+      "source": "./mods/painel",
+      "description": "Painel ao lado da conversa: tarefas, subagentes e notas do vault alteradas hoje."
+    }
+  ]
+}
