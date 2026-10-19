@@ -67,7 +67,9 @@ Descubra em qual dos dois você está nas duas primeiras trocas. Muda a pergunta
 
 **Setores prioritários:** metalmecânica; agrícola (máquinas, implementos e insumos); fabricantes de produtos para venda em e-commerce; fabricantes de máquinas para venda no varejo; robótica; produtos para construção civil. Fora desses setores a conversa pode acontecer, mas a prioridade da agenda é neles.
 
-**Pré-requisito:** a importação é feita em nome do cliente, então ele precisa estar habilitado a importar (RADAR). Pergunte cedo "vocês já importam?". Quem nunca importou não é desqualificado, mas o caminho é mais longo.
+**Porte prioritário:** PME de **5 a 50 funcionários**, em qualquer lugar do Brasil. Nessa faixa, o dono muitas vezes é o comprador e decide rápido. Fábrica grande tem processo de homologação longo e comprador sem autonomia; não é proibido, mas não é prioridade.
+
+**Pré-requisito:** a importação é feita em nome do cliente, então ele precisa estar habilitado a importar (RADAR). Pergunte cedo "vocês já importam?". Quem nunca importou **não é desqualificado**: a Lighthouse orienta a habilitação. Só muda o caminho, que fica um pouco mais longo.
 
 Quem **não** é ICP: pessoa física, revenda sem produção, quem precisa de entrega em menos de 30 dias sem exceção, quem não aceita pagamento antecipado em nenhuma hipótese.
 
@@ -99,7 +101,7 @@ Você não vai fazer BANT em WhatsApp. Vai colher as cinco informações ao long
 | --- | --- |
 | **Item** (o quê, com que spec?) | "Qual item pesa mais hoje? Se tiver foto, part number ou ficha, me manda que já adianta." |
 | **Quantidade e frequência** | "Isso dá quanto por mês? Ou é compra pontual, tipo projeto?" |
-| **Fornecimento atual** (de quem, de onde, já importa?) | "Hoje vem de distribuidor nacional, importação direta ou outra trading?" Se nunca importou: "Vocês já têm habilitação pra importar ou seria a primeira?" |
+| **Fornecimento atual** (de quem, de onde, já importa?) | "Hoje vem de distribuidor nacional, importação direta ou outra trading?" Se nunca importou: "Vocês já têm habilitação pra importar ou seria a primeira? Se for a primeira, a gente orienta." |
 | **Dor concreta** (preço, prazo, disponibilidade, descontinuado) | "O que mais pesa: preço, prazo ou achar a peça?" |
 | **Decisão e tempo** (quem aprova, quando compra) | "Quem aprova fornecedor novo aí? E a próxima compra é quando?" |
 
@@ -161,6 +163,7 @@ Toda objeção tem três camadas: o que o lead disse, o que ele quis dizer e o q
 | **"Pagar adiantado pra China? Nem pensar."** | "Medo de perder o dinheiro" | "É a objeção certa, e eu traria ela mesmo se você não trouxesse. Dois pontos: o pagamento vai direto pro fabricante, com proforma e contrato no nome da sua empresa, a Lighthouse não passa a mão no dinheiro. E é por etapa: estudo gratuito, 30% na confirmação, inspeção antes do embarque, 70% depois [ou 50/50]. Dá pra começar com um pedido pequeno. Qual seria o item mais seguro pra isso?" |
 | **"China é qualidade ruim"** | "Já me queimei ou ouvi história" | "Tem fábrica ruim e fábrica que fornece pra marca que você já usa. O trabalho é separar uma da outra: spec na mão, fabricante validado, amostra antes do pedido e inspeção antes do embarque. Qual item você teria mais receio? Começo por ele." |
 | **"90 dias é muito"** | "Não posso ficar sem" | "Marítimo é isso mesmo, cerca de 90. Aéreo fica em torno de 30, pra urgência ou item leve. Por isso é programação: hoje você compra com quanto de antecedência e qual estoque de segurança?" |
+| **"Nunca importei, não tenho nem habilitação"** | "Isso é pra quem já importa" | "Muita PME está nessa. A gente orienta a habilitação no RADAR junto com o primeiro estudo, e a importação sai no nome da sua empresa desde o início. Qual item você mais paga caro hoje no distribuidor? Começo o estudo por ele enquanto a habilitação anda." |
 | **"Já importo direto da China"** | "Não preciso de intermediário" | "Então você já tem RADAR e sabe o trabalho que dá. Onde mais trava hoje: achar fabricante confiável, negociar MOQ ou conduzir o processo? A importação continua no seu nome, a gente entra nessas três frentes." |
 | **"Manda o catálogo"** | "Quero encerrar" ou "não entendi o modelo" | "Não temos catálogo, e isso é proposital: a gente localiza o que a sua fábrica usa, não o que a gente tem na prateleira. Me manda o item que mais pesa no seu custo que eu te devolvo o estudo." |
 | **"MOQ vai ser alto"** | "Meu volume não paga" | "Quem define é o fabricante, e varia muito. Qual o consumo mensal? Se o MOQ não encaixar, o estudo mostra e você não perde tempo." |
@@ -718,7 +721,7 @@ Antes de fechar o dia:
 - [ ] Prometi hoje algum MOQ, prazo, preço ou condição de amostra, inspeção e garantia antes do estudo?
 - [ ] Citei alguma referência ou case? (não temos; se citei, corrigir)
 - [ ] Em alguma conversa o pagamento antecipado ficou escondido até a proposta, ou apareceu sem o "direto ao fabricante, no seu nome"?
-- [ ] Perguntei se o lead já importa (RADAR) antes de propor o estudo?
+- [ ] Perguntei se o lead já importa (RADAR) antes de propor o estudo? Se não importa, ofereci a orientação?
 - [ ] Alguma mensagem minha hoje falou mal do fornecedor atual do lead?
 - [ ] Em qual conversa de hoje apareceu um sinal de compra? Eu ampliei ou acelerei?
 - [ ] Em qual conversa eu deveria ter virado a chave e não virei?
@@ -727,4 +730,4 @@ Antes de fechar o dia:
 
 ---
 
-*Versão 2.1 — outubro de 2026. Modelo confirmado pelo Ben: sourcing na China sob encomenda, estudo de viabilidade gratuito, importação e contratos em nome do cliente, pagamento FOB 30/70 ou 50/50 direto ao fabricante, aéreo cerca de 30 dias e marítimo cerca de 90, inspeção, amostra e garantia disponíveis, sem referências a citar, setores prioritários metalmecânica, agrícola, e-commerce, máquinas para varejo, robótica e construção civil, CRM ClickUp.*
+*Versão 2.1 — outubro de 2026. Modelo confirmado pelo Ben: sourcing na China sob encomenda, estudo de viabilidade gratuito, importação e contratos em nome do cliente, pagamento FOB 30/70 ou 50/50 direto ao fabricante, aéreo cerca de 30 dias e marítimo cerca de 90, inspeção, amostra e garantia disponíveis, sem referências a citar, setores prioritários metalmecânica, agrícola, e-commerce, máquinas para varejo, robótica e construção civil, cliente prioritário PME de 5 a 50 funcionários em qualquer lugar do Brasil, orientação de habilitação no RADAR para quem nunca importou, CRM ClickUp.*
