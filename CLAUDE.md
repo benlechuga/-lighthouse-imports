@@ -19,13 +19,15 @@ Confirmado pelo Ben em 2026-10.
 - **O que faz:** importa da **China** para indústrias brasileiras, sob encomenda. É uma operação de **sourcing e importação por projeto**, não um distribuidor com estoque.
 - **O que vende:** **qualquer linha de insumo industrial**, além de peças, partes, acessórios, equipamentos, robôs e afins. Não há catálogo fixo: o cliente diz o que precisa e a Lighthouse localiza o fabricante.
 - **Origem:** China. **Não há estoque local.** Trabalha com **programação de embarque** e **estudo de viabilidade** por item.
-- **Estudo de viabilidade:** é a porta de entrada comercial. A partir da especificação (ou foto, part number, amostra) e da quantidade, a Lighthouse levanta fabricante, preço FOB, MOQ e custo final no Brasil. Custo do estudo para o cliente: **[PREENCHER]** (grátis ou cobrado).
+- **Estudo de viabilidade:** é a porta de entrada comercial. A partir da especificação (ou foto, part number, amostra) e da quantidade, a Lighthouse levanta fabricante, preço FOB, MOQ e custo final no Brasil. O estudo é **gratuito** para o cliente.
 - **Pedido mínimo (MOQ):** definido pelo **fabricante**, item a item. Não prometer MOQ antes do estudo.
 - **Prazo médio de entrega:** **aéreo cerca de 30 dias, marítimo cerca de 90 dias**, contados a partir da confirmação do pedido e pagamento.
 - **Condição de pagamento:** base **FOB**, **30/70** (30% na confirmação do pedido, 70% antes do embarque) ou **50/50**. Ou seja, o cliente paga adiantado. Esta é a principal objeção a tratar.
-- **Quem nacionaliza (importa em nome próprio ou do cliente), quem contrata frete, seguro e despachante, e se a Lighthouse cobra comissão, markup ou fee de serviço:** **[PREENCHER]**.
+- **Importação em nome do cliente.** Todos os contratos (fabricante, frete, seguro, despachante) ficam em nome do cliente. O pagamento ao fabricante é feito pelo cliente, com proforma em nome dele. A Lighthouse **não recebe nem guarda o dinheiro da mercadoria**. Este é o principal argumento contra o medo do pagamento antecipado.
+- **Pré-requisito do cliente:** por importar em nome próprio, o cliente precisa estar habilitado a importar (RADAR da Receita Federal). Se a Lighthouse orienta a habilitação de quem ainda não importa: **[PREENCHER]**.
+- **Remuneração da Lighthouse:** comissão, markup e fee de serviço, combinados conforme o projeto. Não detalhar a estrutura por WhatsApp; dizer que está discriminada no estudo e na proposta.
 - **Tempo de mercado, clientes ou setores de referência:** não há referências para citar ainda (N/A). **Não inventar clientes, cases ou anos de mercado.** O discurso de confiança se apoia em processo (estudo, proforma do fabricante, pagamento por etapas, inspeção, amostra), não em histórico.
-- **Inspeção pré-embarque, amostra antes do pedido, garantia e pós-venda de equipamentos:** **[PREENCHER]**. Até confirmar, o Claude pode dizer que "é possível avaliar" mas não deve prometer.
+- **Inspeção pré-embarque, amostra antes do pedido e garantia para equipamentos:** **existem**. Condições (custo, prazo, cobertura) variam por item e fabricante e são definidas no estudo. O SDR pode afirmar que existem; os detalhes vêm do estudo.
 - **Sede, CNPJ, tamanho da equipe:** **[PREENCHER]**.
 
 ## 3. Produto secundário: CALCCOMEX IA
@@ -40,11 +42,12 @@ Resumo da copy do `index.html`, para trabalho no site: calcula NCM por IA, II, I
 - **Dois tipos de compra, discursos diferentes:**
   - **Recorrente** (insumos, peças de reposição, acessórios): dor é preço do distribuidor nacional, dependência de um fornecedor, peça descontinuada ou importada com intermediário.
   - **Projeto** (equipamento, robô, automação, linha nova): dor é custo de capex, prazo e segurança de comprar na China sem conhecer o fabricante.
-- **Perfis-alvo (ICP):** comprador ou gerente de suprimentos; gerente industrial ou de manutenção (peças e equipamentos); engenharia ou projetos (automação); dono ou diretor em fábricas menores. **[PREENCHER]** setores prioritários e porte.
+- **Setores prioritários:** metalmecânica; agrícola (máquinas, implementos e insumos); fabricantes de produtos para venda em e-commerce; fabricantes de máquinas para venda no varejo; robótica; produtos para construção civil.
+- **Perfis-alvo (ICP):** comprador ou gerente de suprimentos; gerente industrial ou de manutenção (peças e equipamentos); engenharia ou projetos (automação); dono ou diretor em fábricas menores. Porte prioritário: **[PREENCHER]**.
 - **Não é alvo:** pessoa física, revenda sem produção, quem precisa de entrega em menos de 30 dias sem exceção, quem não aceita pagamento antecipado em nenhuma condição.
 - **Canais:** WhatsApp e e-mail. E-mail qualifica, WhatsApp fecha. Estudo de viabilidade e proposta vão por e-mail.
 - **Objetivo do SDR, em ordem:** estudo de viabilidade solicitado (com spec e quantidade); reunião com quem aprova compra ou capex; próximo passo com data; lead desqualificado com motivo.
-- **Regras de discurso:** não prometer MOQ, prazo ou preço antes do estudo; dizer "cerca de 30 dias aéreo, cerca de 90 marítimo" como média; nunca inventar referências; nunca falar mal do fornecedor atual ou do produto nacional; tratar o pagamento antecipado com transparência, nunca escondê-lo.
+- **Regras de discurso:** não prometer MOQ, prazo ou preço antes do estudo; dizer "cerca de 30 dias aéreo, cerca de 90 marítimo" como média; nunca inventar referências; nunca falar mal do fornecedor atual ou do produto nacional; tratar o pagamento antecipado com transparência, sempre junto com o fato de que o pagamento vai ao fabricante em nome do cliente; perguntar cedo se o cliente já importa (habilitação RADAR).
 - **CRM:** **ClickUp.** Toda conversa vira tarefa com item, spec, quantidade, fornecedor atual, decisor, próximo passo e data. Conector do ClickUp está disponível nas sessões.
 
 ## 5. O que há neste repositório
@@ -77,4 +80,5 @@ Cores da marca no manifest: fundo `#0a1226`, tema `#0B1B3B`.
 ## 7. Histórico de decisões
 
 - 2026-10: criado o treinamento SDR nível 2 do Pedro. Primeira versão assumiu a CALCCOMEX como produto; corrigida para venda de insumos; depois ajustada ao modelo real: sourcing na China sob encomenda, estudo de viabilidade, sem estoque, FOB 30/70 ou 50/50, aéreo 30 dias e marítimo 90 dias, sem referências a citar, CRM ClickUp.
+- 2026-10: Ben confirmou: estudo gratuito; importação e contratos em nome do cliente; remuneração por comissão, markup e fee combinados; inspeção, amostra e garantia existem; setores prioritários metalmecânica, agrícola, e-commerce, máquinas para varejo, robótica e construção civil.
 - 2026-10: criado este CLAUDE.md para dar memória persistente às sessões.

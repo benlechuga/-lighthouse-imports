@@ -5,7 +5,7 @@
 **Canais:** WhatsApp e e-mail
 **Formato:** teoria curta + 5 provas (múltipla escolha e simulações abertas) + gabarito comentado + plano de evolução
 
-> Fatos fixos do modelo, usados em todo o material: **não há estoque**, tudo é programação de embarque; a porta de entrada é o **estudo de viabilidade**; **MOQ é definido pelo fabricante**; prazo médio **aéreo cerca de 30 dias, marítimo cerca de 90**; pagamento **FOB, 30/70 ou 50/50**; **não há clientes ou cases para citar**, então a confiança se constrói com processo, nunca com histórico inventado.
+> Fatos fixos do modelo, usados em todo o material: **não há estoque**, tudo é programação de embarque; a porta de entrada é o **estudo de viabilidade, gratuito**; **MOQ é definido pelo fabricante**; prazo médio **aéreo cerca de 30 dias, marítimo cerca de 90**; pagamento **FOB, 30/70 ou 50/50, feito pelo cliente direto ao fabricante, com importação e contratos em nome do cliente**; **inspeção pré-embarque, amostra e garantia de equipamento existem**, com condições definidas no estudo; **não há clientes ou cases para citar**, então a confiança se constrói com processo, nunca com histórico inventado. Setores prioritários: metalmecânica, agrícola, fabricantes para e-commerce, fabricantes de máquinas para varejo, robótica e construção civil.
 
 ---
 
@@ -65,11 +65,15 @@ Descubra em qual dos dois você está nas duas primeiras trocas. Muda a pergunta
 | **Engenharia / projetos** | Equipamento com a spec certa, fabricante confiável | "Tem o modelo X?", "faz inspeção?", "tem garantia?" |
 | **Dono / diretor** (fábrica menor) | Margem, capex menor, segurança | "China é confiável?", "e se der problema?" |
 
+**Setores prioritários:** metalmecânica; agrícola (máquinas, implementos e insumos); fabricantes de produtos para venda em e-commerce; fabricantes de máquinas para venda no varejo; robótica; produtos para construção civil. Fora desses setores a conversa pode acontecer, mas a prioridade da agenda é neles.
+
+**Pré-requisito:** a importação é feita em nome do cliente, então ele precisa estar habilitado a importar (RADAR). Pergunte cedo "vocês já importam?". Quem nunca importou não é desqualificado, mas o caminho é mais longo.
+
 Quem **não** é ICP: pessoa física, revenda sem produção, quem precisa de entrega em menos de 30 dias sem exceção, quem não aceita pagamento antecipado em nenhuma hipótese.
 
 ### 2.3 A proposta de valor em uma frase (e três variações)
 
-**Base:** "A Lighthouse localiza na China o fabricante do que a sua indústria compra, levanta o custo final no Brasil num estudo de viabilidade, e conduz a importação do pedido ao embarque. Você compra de fábrica, não de intermediário."
+**Base:** "A Lighthouse localiza na China o fabricante do que a sua indústria compra, levanta o custo final no Brasil num estudo de viabilidade gratuito, e conduz a importação em seu nome, do pedido ao desembaraço. Você compra de fábrica, paga ao fabricante, e não passa por intermediário."
 
 Variações:
 - **Comprador:** "Você vê preço FOB, MOQ e custo final no Brasil antes de decidir. Se não compensar, o estudo te diz isso."
@@ -95,7 +99,7 @@ Você não vai fazer BANT em WhatsApp. Vai colher as cinco informações ao long
 | --- | --- |
 | **Item** (o quê, com que spec?) | "Qual item pesa mais hoje? Se tiver foto, part number ou ficha, me manda que já adianta." |
 | **Quantidade e frequência** | "Isso dá quanto por mês? Ou é compra pontual, tipo projeto?" |
-| **Fornecimento atual** (de quem, de onde) | "Hoje vem de distribuidor nacional, importação direta ou outra trading?" |
+| **Fornecimento atual** (de quem, de onde, já importa?) | "Hoje vem de distribuidor nacional, importação direta ou outra trading?" Se nunca importou: "Vocês já têm habilitação pra importar ou seria a primeira?" |
 | **Dor concreta** (preço, prazo, disponibilidade, descontinuado) | "O que mais pesa: preço, prazo ou achar a peça?" |
 | **Decisão e tempo** (quem aprova, quando compra) | "Quem aprova fornecedor novo aí? E a próxima compra é quando?" |
 
@@ -103,11 +107,11 @@ Regra: **uma pergunta por mensagem.** Duas perguntas no mesmo texto fazem o comp
 
 ### 2.6 Preço, prazo e pagamento: as três regras do nível 2
 
-**Preço.** Nunca recuse falar de preço, soa como esconder. Nunca dê número sem item e quantidade, porque o número vira referência contra você. A resposta é sempre: "o estudo de viabilidade te dá preço FOB, MOQ e custo final no Brasil; pra rodar preciso do item e da quantidade".
+**Preço.** Nunca recuse falar de preço, soa como esconder. Nunca dê número sem item e quantidade, porque o número vira referência contra você. A resposta é sempre: "o estudo de viabilidade é gratuito e te dá preço FOB, MOQ e custo final no Brasil; pra rodar preciso do item e da quantidade". Se perguntarem como a Lighthouse ganha: "a remuneração vem discriminada no estudo e na proposta". Não detalhe comissão, markup ou fee por WhatsApp.
 
 **Prazo.** Diga a média com honestidade: cerca de 30 dias aéreo, cerca de 90 marítimo, a partir da confirmação. Nunca prometa menos. Prazo quebrado em importação é fim de relação.
 
-**Pagamento antecipado (FOB 30/70 ou 50/50).** Nunca esconda. Traga você antes que o lead descubra sozinho, com o mecanismo de segurança junto: estudo primeiro, proforma do fabricante, pagamento por etapa, possibilidade de amostra e inspeção (confirmar com o Ben o que está disponível antes de prometer). Quem descobre o adiantamento na proposta se sente enganado; quem ouve de você na conversa avalia o risco.
+**Pagamento antecipado (FOB 30/70 ou 50/50).** Nunca esconda. Traga você antes que o lead descubra sozinho, e sempre com o fato que muda tudo: **o cliente paga direto ao fabricante, com proforma e contratos em nome dele. A Lighthouse não recebe nem guarda o dinheiro da mercadoria.** Junto vão os outros mecanismos: estudo gratuito primeiro, pagamento por etapa, amostra antes do pedido, inspeção pré-embarque, garantia para equipamento (condições por item, definidas no estudo). Quem descobre o adiantamento na proposta se sente enganado; quem ouve de você na conversa avalia o risco.
 
 ---
 
@@ -139,7 +143,7 @@ Regra: **uma pergunta por mensagem.** Duas perguntas no mesmo texto fazem o comp
 ### 3.3 O que vale para os dois
 
 - **Espelhe o vocabulário.** Se o lead fala "MOQ", "lead time", "FOB", "proforma", use. Se fala "quantidade mínima" e "prazo", não corrija com jargão.
-- **Nunca prometa MOQ, prazo, preço ou disponibilidade antes do estudo.** Diga que o estudo responde e volte em até 24 h com o prazo do estudo.
+- **Nunca prometa MOQ, prazo, preço ou disponibilidade antes do estudo.** Diga que o estudo responde e volte em até 24 h com o prazo do estudo. Inspeção, amostra e garantia **existem** e você pode afirmar isso; as condições de cada uma vêm no estudo.
 - **Nunca invente cliente, case ou tempo de mercado.** Não temos referências para citar. Quem pedir referência recebe processo, não história.
 - **Nunca fale mal do fornecedor atual, do distribuidor nem do produto nacional.** Ele escolheu. Fale do intermediário no meio do caminho e do risco de depender de um só.
 - **Registre tudo no ClickUp** no mesmo dia: item, spec, quantidade, fornecedor atual, quem decide, próximo passo e data.
@@ -154,16 +158,17 @@ Toda objeção tem três camadas: o que o lead disse, o que ele quis dizer e o q
 | --- | --- | --- |
 | **"Já tenho fornecedor"** | "Não vejo motivo pra mudar" | "Imagino, ninguém produz sem. Pergunta honesta: ele fabrica ou ele importa e revende? Se importa, você está pagando a margem dele. O estudo te mostra a diferença; se não compensar, eu te digo." |
 | **"Quanto fica?"** (cedo demais) | "Me dá um motivo pra continuar" | "Depende do item e da quantidade, e chute meu vira problema seu. O estudo de viabilidade te dá preço FOB, MOQ e custo final no Brasil. Me manda o item e o consumo mensal que eu rodo." |
-| **"Pagar adiantado pra China? Nem pensar."** | "Medo de perder o dinheiro" | "É a objeção certa, e eu traria ela mesmo se você não trouxesse. Funciona assim: estudo primeiro, sem pagar nada; proforma do fabricante; 30% na confirmação e 70% antes do embarque [ou 50/50], cada etapa com documento. Dá pra começar com um pedido pequeno pra você testar o processo. Qual seria o item mais seguro pra isso?" |
-| **"China é qualidade ruim"** | "Já me queimei ou ouvi história" | "Tem fábrica ruim e fábrica que fornece pra marca que você já usa. O trabalho é exatamente separar uma da outra: spec na mão, fabricante validado, amostra quando cabe. Qual item você teria mais receio? Começo por ele." |
+| **"Pagar adiantado pra China? Nem pensar."** | "Medo de perder o dinheiro" | "É a objeção certa, e eu traria ela mesmo se você não trouxesse. Dois pontos: o pagamento vai direto pro fabricante, com proforma e contrato no nome da sua empresa, a Lighthouse não passa a mão no dinheiro. E é por etapa: estudo gratuito, 30% na confirmação, inspeção antes do embarque, 70% depois [ou 50/50]. Dá pra começar com um pedido pequeno. Qual seria o item mais seguro pra isso?" |
+| **"China é qualidade ruim"** | "Já me queimei ou ouvi história" | "Tem fábrica ruim e fábrica que fornece pra marca que você já usa. O trabalho é separar uma da outra: spec na mão, fabricante validado, amostra antes do pedido e inspeção antes do embarque. Qual item você teria mais receio? Começo por ele." |
 | **"90 dias é muito"** | "Não posso ficar sem" | "Marítimo é isso mesmo, cerca de 90. Aéreo fica em torno de 30, pra urgência ou item leve. Por isso é programação: hoje você compra com quanto de antecedência e qual estoque de segurança?" |
-| **"Já importo direto da China"** | "Não preciso de intermediário" | "Então você sabe o trabalho que dá. Onde mais trava hoje: achar fabricante confiável, negociar MOQ ou o processo de importação? Em qualquer um dos três consigo te ajudar, nos outros não." |
+| **"Já importo direto da China"** | "Não preciso de intermediário" | "Então você já tem RADAR e sabe o trabalho que dá. Onde mais trava hoje: achar fabricante confiável, negociar MOQ ou conduzir o processo? A importação continua no seu nome, a gente entra nessas três frentes." |
 | **"Manda o catálogo"** | "Quero encerrar" ou "não entendi o modelo" | "Não temos catálogo, e isso é proposital: a gente localiza o que a sua fábrica usa, não o que a gente tem na prateleira. Me manda o item que mais pesa no seu custo que eu te devolvo o estudo." |
 | **"MOQ vai ser alto"** | "Meu volume não paga" | "Quem define é o fabricante, e varia muito. Qual o consumo mensal? Se o MOQ não encaixar, o estudo mostra e você não perde tempo." |
 | **"Não é o momento, estoque cheio"** | "Não entendi o custo de esperar" | "Entendo. Com 90 dias de prazo, o momento de rodar o estudo é antes de precisar. A próxima compra é quando? Rodo o estudo agora e você decide na hora certa." |
-| **"Vou ver com o sócio / diretor"** | "Não decido sozinho" ou "desculpa" | "Faz sentido, é dinheiro adiantado. O que ele vai perguntar primeiro: segurança do pagamento ou preço? Te mando o passo a passo do processo pra você levar." |
-| **"Vocês são novos, não tenho referência"** | "Medo de fornecedor desconhecido" | "Verdade, e não vou te inventar case. O que posso te dar é processo: estudo antes de qualquer pagamento, proforma do fabricante, pagamento por etapa, começar pequeno. Se isso não bastar, eu entendo. Quer ver o estudo de um item primeiro?" |
-| **"E se der problema no produto?"** | "Quem responde?" | Não prometer garantia sem confirmar. "Pergunta certa. Depende do item e do fabricante, e isso entra no estudo: o que ele cobre, inspeção antes do embarque, amostra. Qual item você está pensando? Te respondo com o que vale pra ele, não genérico." |
+| **"Vou ver com o sócio / diretor"** | "Não decido sozinho" ou "desculpa" | "Faz sentido, é dinheiro adiantado. O que ele vai perguntar primeiro: segurança do pagamento ou preço? Se for pagamento, a resposta é que vai direto pro fabricante, no nome de vocês. Te mando o passo a passo pra você levar." |
+| **"Vocês são novos, não tenho referência"** | "Medo de fornecedor desconhecido" | "Verdade, e não vou te inventar case. O que posso te dar é processo: estudo gratuito antes de qualquer decisão, pagamento direto ao fabricante no seu nome, inspeção antes do embarque, começar pequeno. Se isso não bastar, eu entendo. Quer ver o estudo de um item primeiro?" |
+| **"E se der problema no produto?"** | "Quem responde?" | "Pergunta certa. Três camadas: amostra antes do pedido, inspeção antes do embarque e, pra equipamento, garantia do fabricante. O que cada uma cobre depende do item e vem no estudo. Qual item você está pensando? Te respondo com o que vale pra ele, não genérico." |
+| **"Quanto vocês ganham nisso?"** | "Quero saber se o preço é honesto" | "Justo. A remuneração vem discriminada no estudo e na proposta, não fica escondida no preço. Primeiro o estudo, gratuito; se o custo final não compensar, você nem chega na proposta. Qual item rodamos?" |
 | **"Me liga"** | Pode ser interesse real ou empurrar | "Ligo sim. Hoje às 15h ou amanhã às 9h? Enquanto isso, me manda o item e a quantidade que a ligação já sai com o estudo encaminhado." |
 | **Silêncio depois de receber o estudo** | Está comparando ou travou internamente | Follow-up com valor novo: "Confirmei com o fabricante que o preço do estudo vale até [data]. Ficou alguma dúvida no custo final ou no processo de pagamento?" |
 
@@ -185,7 +190,7 @@ Lead pede material para encerrar. Vire para o item dele.
 
 ### 5.3 De medo para processo
 Lead gira em "e se", "China", "adiantado". Vire para as etapas, uma de cada vez.
-> "Vamos por etapa. Primeira: estudo, sem pagar nada. Você só decide algo depois de ver preço, MOQ e custo final. Posso rodar o estudo de um item?"
+> "Vamos por etapa. Primeira: estudo, gratuito. Você só decide algo depois de ver preço, MOQ e custo final. E quando decidir, o pagamento vai pro fabricante no nome da sua empresa, não pra mim. Posso rodar o estudo de um item?"
 
 ### 5.4 De "não é o momento" para o calendário da compra
 Lead empurra. Você trava uma data ligada ao prazo de importação.
@@ -208,8 +213,8 @@ Sinal de compra em texto é sutil. Comprador não escreve "quero comprar". Ele e
 | "Consegue o modelo X / part number Y?" | Tem item concreto na cabeça | Melhor sinal possível. Peça foto, spec e quantidade. Diga o prazo do estudo. |
 | "Essa peça foi descontinuada, não acho mais" | Dor viva, sem alternativa | Pergunte quantas usa por mês e o que acontece quando falta. Proponha estudo com foto da peça. |
 | "Qual o MOQ?" | Está encaixando volume | Responda que quem define é o fabricante e pergunte o consumo. |
-| "Tem como mandar amostra?" | Vai homologar | Confirme com o Ben o que é possível para o item. Pergunte quem avalia e qual spec. |
-| "Faz inspeção antes de embarcar?" | Está avaliando risco com seriedade | Confirme com o Ben. Pergunte qual item e qual o critério de aceitação dele. |
+| "Tem como mandar amostra?" | Vai homologar | Sim, amostra antes do pedido existe; condições por item. Pergunte qual item, quem avalia e qual spec precisa bater. |
+| "Faz inspeção antes de embarcar?" | Está avaliando risco com seriedade | Sim, inspeção pré-embarque existe. Pergunte qual item e qual o critério de aceitação dele; isso entra no estudo. |
 | "Estou pagando R$ X no distribuidor" | Já comparou mentalmente | Quantifique: "Quantas por mês? Esse número entra no estudo como referência." |
 | "Vamos trocar a linha / temos projeto de automação" | Compra de projeto, capex | Proponha reunião com engenharia. Pergunte prazo do projeto. |
 | "Quanto fica posto na fábrica?" | Quer custo final, não FOB | Diga que o estudo entrega custo final e peça item e quantidade. |
@@ -384,7 +389,7 @@ Qual resposta avança mais a conversa?
 **Q21.** "Pagar 30% adiantado pra uma empresa que eu não conheço, pra produto que vem da China? Nem pensar."
 
 - A) "É o padrão do mercado, todo mundo faz assim."
-- B) "É a objeção certa, e eu traria ela mesmo se você não trouxesse. Funciona por etapa: estudo primeiro, sem pagar nada; proforma do fabricante; 30% na confirmação e 70% antes do embarque, cada etapa documentada. Dá pra começar com um pedido pequeno pra testar o processo. Qual item seria o mais seguro pra isso?"
+- B) "É a objeção certa, e eu traria ela mesmo se você não trouxesse. Primeiro: o pagamento vai direto pro fabricante, com proforma e contrato no nome da sua empresa, a gente não passa a mão no dinheiro. Segundo: é por etapa, estudo gratuito, 30% na confirmação, inspeção antes do embarque, 70% depois. Dá pra começar com um pedido pequeno. Qual item seria o mais seguro pra isso?"
 - C) "Podemos fazer 50/50 então."
 - D) "Entendo. Então talvez não seja pra você."
 
@@ -458,7 +463,7 @@ Qual resposta avança mais a conversa?
 **Q31.** Já são 4 trocas. O lead perguntou "faz inspeção?", "tem garantia?", "manda amostra?", "entrega em Minas?". Você respondeu "sim" ou "dá pra ver" às quatro. Qual o problema e o que fazer?
 
 - A) Nenhum problema, ele está interessado. Continue respondendo.
-- B) A conversa virou checklist e nenhuma pergunta de qualificação foi respondida. Vire a chave: "Tudo isso entra no estudo, e depende do item. Me diz qual é o item e a quantidade que eu te respondo cada ponto com o que vale pra ele, não genérico."
+- B) A conversa virou checklist e nenhuma pergunta de qualificação foi respondida. Vire a chave: "Inspeção, amostra e garantia existem, e as condições de cada uma dependem do item. Me diz qual é o item e a quantidade que eu te respondo cada ponto com o que vale pra ele, não genérico."
 - C) Proponha reunião agora porque ele fez 4 perguntas.
 - D) Mande a apresentação e diga "tá tudo aí".
 
@@ -492,8 +497,8 @@ Qual resposta avança mais a conversa?
 
 **Q36.** Lead pergunta: "Tem como mandar amostra antes?"
 
-- A) "Tem, mandamos amostra de tudo."
-- B) "Depende do item e do fabricante, e isso entra no estudo. Qual item? E quem avalia a amostra aí, pra eu já saber a spec que precisa bater."
+- A) "Tem, mandamos amostra de tudo, de graça e na hora."
+- B) "Tem. Amostra antes do pedido faz parte do processo; custo e prazo dependem do item e vêm no estudo. Qual item? E quem avalia a amostra aí, pra eu já saber a spec que precisa bater."
 - C) "Não."
 - D) "Vou confirmar e te retorno." (e não pergunta nada)
 
@@ -581,7 +586,7 @@ Escreva sua resposta.
 
 | Q | Resposta | Por quê |
 | --- | --- | --- |
-| 21 | **B** | Valida a objeção, mostra o processo por etapa, oferece começar pequeno e pergunta pelo item. A minimiza. C cede sem resolver o medo. D desiste. |
+| 21 | **B** | Valida a objeção, dá o fato decisivo (pagamento ao fabricante em nome do cliente), mostra as etapas, oferece começar pequeno e pergunta pelo item. A minimiza. C cede sem resolver o medo. D desiste. |
 | 22 | **A** | Honesto sobre quem define o MOQ, pede o item, usa o estudo como filtro. B desqualifica cedo. C é mentira. D é meio caminho. |
 | 23 | **B** | Não aceita nem rejeita o número: transforma em referência para o estudo e pergunta se o distribuidor importa. A promete preço sem base. C desiste. D destrói margem. |
 | 24 | **B** | Concorda que existe fábrica ruim, explica o trabalho de seleção e pede o item que queimou. A discute. C minimiza a experiência dele. D foge. |
@@ -590,7 +595,7 @@ Escreva sua resposta.
 | 27 | **C** | Na terceira vez, transparência sobre o porquê e pedido de uma informação só. A repete sem avançar. B e D fogem. |
 | 28 | **B** | Usa o prazo de importação como motivo lógico para rodar o estudo antes e trava a data. A dispersa. C desiste. D discute. |
 | 29 | **B** | "kkk" é abertura; adivinhação leve que faz ele confirmar ou corrigir. A é vazio. C quebra o clima. D ignora. |
-| 30 | **B** | Honestidade sobre não ter referência, troca história por processo, oferece saída digna e pede o item. A inventa referência (proibido). C é defensivo. D desiste. |
+| 30 | **B** | Honestidade sobre não ter referência, troca história por processo (estudo gratuito, pagamento ao fabricante, inspeção), oferece saída digna e pede o item. A inventa referência (proibido). C é defensivo. D desiste. |
 
 ## Prova 4 — Viradas de chave e oportunidades
 
@@ -601,7 +606,7 @@ Escreva sua resposta.
 | 33 | **B** | Responde com a verdade (fabricante define), pede item e consumo, usa o estudo como filtro. A é vago. C é mentira. D soa defensivo. |
 | 34 | **B** | "Pode rodar" sem dados vira estudo errado. Liste os três dados e dê prazo confirmado. A espera passivamente. C é bruto. D é rígido. |
 | 35 | **B** | Engajamento sem informação é falso avanço. Pergunta fechada e honesta separa necessidade de curiosidade. A gasta tempo. C é prematuro. D desperdiça. |
-| 36 | **B** | Amostra depende do item e do fabricante; não prometa. Pergunte item e quem avalia. A promete demais. C fecha a porta. D não avança a qualificação. |
+| 36 | **B** | Amostra existe e pode ser afirmada; condições vêm no estudo. Pergunte item e quem avalia. A promete grátis e na hora sem saber o item. C fecha a porta. D não avança a qualificação. |
 | 37 | **B** | O assistente conhece o item problemático e pode ser seu campeão interno. Dê a ele o estudo para levar. A e C desperdiçam. D é ilusão. |
 | 38 | **B** | Silêncio após o estudo = follow-up com validade do preço e pergunta direta sobre o ponto que mais trava (pagamento). A é cobrança. C desiste cedo. D é invasivo. |
 | 39 | **B** | Quantifique a dor antes de resolver. A compara sem contexto. C é intromissão. D pula etapa. |
@@ -622,12 +627,12 @@ Cada simulação vale 6 pontos. Avalie 1 ponto por critério:
 
 **Referências de resposta forte (não copie, compare):**
 
-**S1:** "Fala, [nome]. Se o distribuidor funciona, ótimo, não é pra tirar ele. A diferença é o caminho: a gente localiza o fabricante na China e você compra de fábrica, com estudo de custo final antes de decidir. Pergunta honesta: ele fabrica ou importa e revende? Se importa, o estudo mostra quanto é a margem dele."
+**S1:** "Fala, [nome]. Se o distribuidor funciona, ótimo, não é pra tirar ele. A diferença é o caminho: a gente localiza o fabricante na China, roda um estudo gratuito com custo final, e você compra de fábrica, no seu nome. Pergunta honesta: ele fabrica ou importa e revende? Se importa, o estudo mostra quanto é a margem dele."
 
 **S2:** Assunto: "Peças de reposição — equipamento antigo"
 Corpo: "Oi, [nome]. Vi seu post sobre a dificuldade de achar reposição pra equipamento antigo. Peça descontinuada no Brasil muitas vezes ainda sai de fábrica na China, ou tem equivalente direto. A Lighthouse localiza o fabricante, roda um estudo com preço, MOQ e custo final no Brasil, e programa o embarque. Qual é a peça que mais te preocupa hoje? Foto ou part number já basta pra eu começar."
 
-**S3:** "Entendo, e é a objeção certa. Gente perde dinheiro quando paga sem processo. Aqui é por etapa: estudo primeiro, sem pagar nada; proforma do fabricante; 30% na confirmação e 70% antes do embarque, cada etapa com documento. E dá pra começar com um pedido pequeno pra testar. Se ainda assim não fizer sentido, eu entendo. Qual seria o item mais seguro pra um primeiro teste?"
+**S3:** "Entendo, e é a objeção certa. Gente perde dinheiro quando paga pra intermediário. Aqui o pagamento vai direto pro fabricante, com proforma e contrato no nome da sua empresa, eu não passo a mão no dinheiro. E é por etapa: estudo gratuito, 30% na confirmação, inspeção antes do embarque, 70% depois. Dá pra começar com um pedido pequeno. Se ainda assim não fizer sentido, eu entendo. Qual seria o item mais seguro pra um primeiro teste?"
 
 **S4:** "[Nome], vou ser direto pra não te tomar tempo: tem algum item que vocês precisam resolver na próxima compra ou é mais pra ter referência de preço? Os dois são ok, só muda o que eu te mando."
 
@@ -655,8 +660,9 @@ Corpo: "Oi, [nome]. Vi seu post sobre a dificuldade de achar reposição pra equ
 
 **Erros que valem revisão imediata, independente da faixa:**
 - Inventar cliente, case ou tempo de mercado.
-- Prometer MOQ, prazo, preço, amostra ou garantia antes do estudo ou sem confirmar com o Ben.
-- Esconder ou enrolar sobre o pagamento antecipado.
+- Prometer MOQ, prazo, preço ou condições de amostra, inspeção e garantia antes do estudo.
+- Esconder ou enrolar sobre o pagamento antecipado, ou falar dele sem dizer que vai direto ao fabricante em nome do cliente.
+- Detalhar comissão, markup ou fee por WhatsApp.
 - Falar mal do fornecedor atual, do distribuidor ou do produto nacional.
 - Mandar pitch de mais de 4 linhas no WhatsApp.
 - Pedir reunião antes de qualquer informação de qualificação.
@@ -671,12 +677,12 @@ Use estes prompts no Claude Code para treinar 15 minutos por dia. A IA faz o com
 
 **Roleplay de objeção**
 ```
-Você é [perfil: comprador de uma indústria de embalagens plásticas em SC, 10 anos com o mesmo distribuidor]. Eu sou SDR da Lighthouse Imports, que localiza fabricantes na China e importa sob encomenda com estudo de viabilidade, FOB 30/70, prazo de 30 dias aéreo e 90 marítimo, sem estoque e sem referências para citar. Eu já mandei a primeira mensagem no WhatsApp. Responda como esse comprador, com ceticismo realista, uma mensagem por vez, curta como no WhatsApp. Use a objeção "[objeção]" na segunda troca. Não saia do personagem até eu escrever FIM. Depois de FIM, avalie cada mensagem minha pela rubrica: tamanho, reconhecimento, uma pergunta, especificidade, sem promessa falsa, próximo passo. Dê nota de 0 a 6 por mensagem e diga o que eu deveria ter escrito.
+Você é [perfil: comprador de uma indústria de embalagens plásticas em SC, 10 anos com o mesmo distribuidor]. Eu sou SDR da Lighthouse Imports, que localiza fabricantes na China e conduz a importação em nome do cliente, sob encomenda, com estudo de viabilidade gratuito, pagamento FOB 30/70 direto ao fabricante, prazo de 30 dias aéreo e 90 marítimo, inspeção, amostra e garantia disponíveis, sem estoque e sem referências para citar. Eu já mandei a primeira mensagem no WhatsApp. Responda como esse comprador, com ceticismo realista, uma mensagem por vez, curta como no WhatsApp. Use a objeção "[objeção]" na segunda troca. Não saia do personagem até eu escrever FIM. Depois de FIM, avalie cada mensagem minha pela rubrica: tamanho, reconhecimento, uma pergunta, especificidade, sem promessa falsa, próximo passo. Dê nota de 0 a 6 por mensagem e diga o que eu deveria ter escrito.
 ```
 
 **Roleplay de pagamento antecipado**
 ```
-Você é [perfil]. Em algum ponto, descubra que o pagamento é adiantado e reaja com desconfiança forte, pedindo garantias e referências que eu não tenho. Não aceite argumento vago. Só avance se eu for transparente, explicar o processo por etapa e propor um primeiro passo sem risco. Depois de FIM, me diga se eu escondi o pagamento, se inventei alguma garantia ou referência, e em qual troca deveria ter trazido o tema antes.
+Você é [perfil]. Em algum ponto, descubra que o pagamento é adiantado e reaja com desconfiança forte, pedindo garantias e referências que eu não tenho. Não aceite argumento vago. Só avance se eu for transparente, explicar o processo por etapa e propor um primeiro passo sem risco. Depois de FIM, me diga se eu escondi o pagamento, se deixei de dizer que ele vai direto ao fabricante em nome do cliente, se inventei alguma referência, e em qual troca deveria ter trazido o tema antes.
 ```
 
 **Roleplay de preço**
@@ -709,9 +715,10 @@ Antes de fechar o dia:
 
 - [ ] Todas as respostas de leads de hoje foram respondidas em até 2 horas no horário comercial?
 - [ ] Toda conversa aberta tem um próximo passo com data ou um motivo de desqualificação registrado no ClickUp?
-- [ ] Prometi hoje algum MOQ, prazo, preço, amostra ou garantia sem confirmar?
+- [ ] Prometi hoje algum MOQ, prazo, preço ou condição de amostra, inspeção e garantia antes do estudo?
 - [ ] Citei alguma referência ou case? (não temos; se citei, corrigir)
-- [ ] Em alguma conversa o pagamento antecipado ficou escondido até a proposta?
+- [ ] Em alguma conversa o pagamento antecipado ficou escondido até a proposta, ou apareceu sem o "direto ao fabricante, no seu nome"?
+- [ ] Perguntei se o lead já importa (RADAR) antes de propor o estudo?
 - [ ] Alguma mensagem minha hoje falou mal do fornecedor atual do lead?
 - [ ] Em qual conversa de hoje apareceu um sinal de compra? Eu ampliei ou acelerei?
 - [ ] Em qual conversa eu deveria ter virado a chave e não virei?
@@ -720,4 +727,4 @@ Antes de fechar o dia:
 
 ---
 
-*Versão 2.0 — outubro de 2026. Ajustado ao modelo real da Lighthouse: sourcing na China sob encomenda, estudo de viabilidade, sem estoque, FOB 30/70 ou 50/50, aéreo cerca de 30 dias e marítimo cerca de 90, sem referências a citar, CRM ClickUp. Pendências no `CLAUDE.md`: custo do estudo, quem nacionaliza, inspeção, amostra e garantia.*
+*Versão 2.1 — outubro de 2026. Modelo confirmado pelo Ben: sourcing na China sob encomenda, estudo de viabilidade gratuito, importação e contratos em nome do cliente, pagamento FOB 30/70 ou 50/50 direto ao fabricante, aéreo cerca de 30 dias e marítimo cerca de 90, inspeção, amostra e garantia disponíveis, sem referências a citar, setores prioritários metalmecânica, agrícola, e-commerce, máquinas para varejo, robótica e construção civil, CRM ClickUp.*
