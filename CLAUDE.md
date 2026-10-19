@@ -9,19 +9,19 @@ Itens marcados com **[PREENCHER]** ainda não foram confirmados pelo Ben. Trate-
 ## 1. Quem fala com você
 
 - **Ben Lechuga** (benlechuga@gmail.com). Dono da Lighthouse Imports. Chama o Claude de **"Jarvis"**. Responda sempre em **português do Brasil**, direto, sem rodeio.
-- **Pedro.** SDR da Lighthouse. Faz prospecção por **WhatsApp e e-mail** usando o Claude Code para pesquisar leads e redigir mensagens. Está em evolução do nível 1 (contato) para o nível 2 (condução da conversa). O material de treinamento dele está em `treinamento/treinamento-sdr-pedro.md`.
+- **Pedro.** SDR da Lighthouse. Prospecta **indústrias** por **WhatsApp e e-mail** para vender insumos importados, usando o Claude Code para pesquisar leads e redigir mensagens. Está em evolução do nível 1 (contato) para o nível 2 (condução da conversa). O material de treinamento dele está em `treinamento/treinamento-sdr-pedro.md`.
 
 ## 2. A empresa
 
 - **Nome:** Lighthouse Imports. Domínio: `lighthouseimports.com.br`.
-- **O que faz:** inteligência artificial para comércio exterior, com foco em importação para o Brasil.
-- **Produto principal confirmado:** **CALCCOMEX IA**, plataforma web de cotação e simulação de custo total de importação. Site em `https://calc.lighthouseimports.com.br/`. O app em si roda em `https://calculadora.lighthouseimports.com.br/` (é para onde os botões de CTA apontam).
-- **Outros serviços** (importação assistida, consultoria, trading, representação): **[PREENCHER]**. Se o Pedro vende algo além da CALCCOMEX, descreva aqui.
-- **Sede, CNPJ, tempo de mercado, tamanho da equipe:** **[PREENCHER]**.
+- **Negócio principal (confirmado pelo Ben em 2026-10):** **venda de insumos importados para a indústria.** A Lighthouse importa e vende matéria-prima e insumos para fábricas no Brasil. É isso que o Pedro vende.
+- **Linhas de insumos, origens (países e fornecedores), ticket médio, pedido mínimo, prazo de entrega e condições de pagamento:** **[PREENCHER]**. Sem isso, o Claude deve usar exemplos genéricos (resinas, químicos, componentes, embalagens, metais) e deixar claro que são ilustrativos.
+- **Produto secundário:** **CALCCOMEX IA**, plataforma web de cotação e simulação de custo total de importação, cujo site está neste repositório. Site em `https://calc.lighthouseimports.com.br/`; o app roda em `https://calculadora.lighthouseimports.com.br/`. **[PREENCHER]** se a CALCCOMEX entra no discurso de vendas de insumos (ex.: transparência de custo nacionalizado para o cliente) ou se é um produto separado.
+- **Sede, CNPJ, tempo de mercado, tamanho da equipe, certificações:** **[PREENCHER]**.
 
-## 3. O produto: CALCCOMEX IA
+## 3. Produto secundário: CALCCOMEX IA
 
-Fonte: copy do `index.html`. Use estes termos, não invente outros.
+Fonte: copy do `index.html`. Use estes termos, não invente outros. Lembre: o Pedro **não** vende a CALCCOMEX como produto principal.
 
 - **Promessa:** "Calcule o custo total da sua importação em segundos com IA." Simula impostos, frete, seguro e despesas aduaneiras automaticamente. "Decida com precisão antes de fechar negócio, sem planilhas, sem chute, sem retrabalho."
 - **Como funciona (3 passos):**
@@ -37,10 +37,12 @@ Fonte: copy do `index.html`. Use estes termos, não invente outros.
 
 ## 4. Vendas e prospecção
 
-- **Perfis-alvo (ICP) assumidos** a partir do produto: importador PME (indústria ou comércio), trading e comercial importadora, despachante aduaneiro e consultor de comex, área de compras ou suprimentos de empresa média. **[PREENCHER]** se o ICP real for diferente ou se houver segmento prioritário.
-- **Não é alvo:** pessoa física, quem importa uma vez por ano por conta própria, quem só quer saber o imposto de um item pessoal.
+- **O que o Pedro vende:** insumos importados para indústria. O comprador é quem decide ou influencia a compra de matéria-prima.
+- **Perfis-alvo (ICP):** comprador, gerente de suprimentos ou compras de indústria; PCP ou engenharia de processo (influencia pela especificação); dono ou diretor industrial em fábricas menores. **[PREENCHER]** segmentos industriais prioritários (ex.: plástico, química, cosmético, alimentício, metalmecânica) e porte.
+- **Não é alvo:** revenda sem indústria, pessoa física, empresa que só compra nacional por exigência contratual.
+- **Diferenciais a usar no discurso:** **[PREENCHER]**. Hipóteses a confirmar: preço nacionalizado competitivo, previsibilidade de custo (uso da CALCCOMEX), estoque local ou programação de entrega, documentação completa (laudo, COA, FISPQ, certificado de origem), suporte de comex para o cliente.
 - **Canais:** WhatsApp e e-mail. E-mail qualifica, WhatsApp fecha.
-- **Objetivo do SDR, em ordem:** reunião ou demo confirmada; conta grátis ativada com cotação real feita; próximo passo com data; lead desqualificado com motivo registrado.
+- **Objetivo do SDR, em ordem:** reunião ou visita confirmada com quem compra; pedido de cotação formal com especificação, volume e frequência; amostra aprovada ou homologação iniciada; próximo passo com data; lead desqualificado com motivo registrado.
 - **CRM usado:** **[PREENCHER]**.
 - **Tom de voz nas mensagens:** profissional e direto, "você" sempre, uma pergunta por mensagem, sem atacar planilha, despachante ou sistema atual do lead. Detalhes completos no treinamento do Pedro.
 - **Ferramentas do SDR além do Claude Code:** **[PREENCHER]** (ex.: Mailerfind aparece como conector disponível nas sessões, confirmar se é usado para prospecção).
@@ -74,5 +76,5 @@ Cores da marca no manifest: fundo `#0a1226`, tema `#0B1B3B`.
 
 ## 7. Histórico de decisões
 
-- 2026-10: criado o treinamento SDR nível 2 do Pedro (`treinamento/treinamento-sdr-pedro.md`), com provas, gabarito e roleplays no Claude Code. Baseado só no contexto da CALCCOMEX IA; revisar quando os itens [PREENCHER] forem definidos.
+- 2026-10: criado o treinamento SDR nível 2 do Pedro (`treinamento/treinamento-sdr-pedro.md`), com provas, gabarito e roleplays no Claude Code. Primeira versão foi escrita para a CALCCOMEX por falta de contexto; reescrita para venda de insumos industriais após o Ben corrigir. Revisar quando os itens [PREENCHER] forem definidos.
 - 2026-10: criado este CLAUDE.md para dar memória persistente às sessões.
