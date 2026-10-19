@@ -29,6 +29,9 @@ Confirmado pelo Ben em 2026-10.
 - **Tempo de mercado, clientes ou setores de referência:** não há referências para citar ainda (N/A). **Não inventar clientes, cases ou anos de mercado.** O discurso de confiança se apoia em processo (estudo, proforma do fabricante, pagamento por etapas, inspeção, amostra), não em histórico.
 - **Inspeção pré-embarque, amostra antes do pedido e garantia para equipamentos:** **existem**. Condições (custo, prazo, cobertura) variam por item e fabricante e são definidas no estudo. O SDR pode afirmar que existem; os detalhes vêm do estudo.
 - **Sede e CNPJ da Lighthouse:** não fazem parte do discurso de vendas; não citar.
+- **Nome completo do Ben em documentos e e-mails:** Benjamin Lechuga. Assinatura padrão de e-mail: `Benjamin Lechuga | Lighthouse Imports`.
+- **E-mail operacional:** `lechuga@lighthouseimports.com.br` (webmail Hostinger). Há uma skill sincronizada na conta, `lhi-email-monitor`, que monitora essa caixa via Chrome e avisa o Ben no WhatsApp.
+- **Referência de processo de importação:** padrão `LHI` + número, por exemplo `LHI002039`. Documentos operacionais que circulam por e-mail: invoice, nota fiscal, BL (bill of lading), processo de importação. Quando um e-mail ou tarefa citar uma referência LHI, trate como processo de importação em andamento de um cliente.
 
 ## 3. Produto secundário: CALCCOMEX IA
 
@@ -76,6 +79,7 @@ Cores da marca no manifest: fundo `#0a1226`, tema `#0B1B3B`.
 - **Mods:** validar com `claude plugin validate <pasta>` e testar com `claude plugin test <pasta>`.
 - **Git:** o mod `lighthouse-guardiao` bloqueia operações destrutivas. Trabalhar em branch `claude/<tema>` e abrir PR; não commitar direto na `main` sem o Ben pedir.
 - **Notas e memória:** o Ben mantém um vault no Obsidian na máquina local (lido pelo mod `painel`). Esse vault **não** é acessível em sessões na nuvem. Contexto que precisa sobreviver entre sessões entra neste arquivo ou em `treinamento/` e `docs/`.
+- **O que o Claude sabe ao abrir uma sessão aqui:** este arquivo, os arquivos do repositório, e as skills sincronizadas na conta (`lhi-email-monitor`, `morning` e as skills padrão). Nada além disso. O Ben espera que o Claude ("Jarvis") conheça a Lighthouse a fundo: se algo relevante sobre a LHI não estiver aqui, a solução é adicionar aqui, não perguntar de novo a cada sessão.
 - **Quando faltar contexto de negócio:** verificar este arquivo primeiro. Se o item estiver marcado **[PREENCHER]**, perguntar ao Ben em vez de assumir.
 
 ## 7. Histórico de decisões
