@@ -15,6 +15,10 @@ export const config = {
   },
 
   ownerWhatsapp: (env.OWNER_WHATSAPP || "").replace(/\D/g, ""),
+  ownerTemplate: {
+    name: env.OWNER_TEMPLATE_NAME || "",
+    lang: env.OWNER_TEMPLATE_LANG || "pt_BR",
+  },
 
   claude: {
     model: env.CLAUDE_MODEL || "claude-opus-5-5",

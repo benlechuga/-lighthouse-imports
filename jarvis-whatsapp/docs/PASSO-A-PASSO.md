@@ -201,7 +201,7 @@ O túnel do passo 5 serve só para testes. Para produção, o Jarvis precisa fic
 **Railway ou Render (mais fácil):**
 
 1. Suba esta pasta para um repositório no GitHub (sem o `.env`).
-2. Crie um serviço novo apontando para o repositório. O `Dockerfile` já está pronto.
+2. Crie um serviço novo apontando para o repositório. Em **Settings → Root Directory**, coloque `jarvis-whatsapp` (no Railway, o `railway.json` e o `Dockerfile` já configuram o build e o health check).
 3. Cadastre as variáveis do `.env` no painel de variáveis do serviço.
 4. **Crie um volume persistente montado em `/app/data`.** Sem ele, o histórico e os leads somem a cada deploy.
 5. Copie a URL pública (ex.: `https://jarvis-cliente.up.railway.app`) e atualize o webhook na Meta (passo 6) para `https://.../webhook`.
@@ -261,7 +261,15 @@ No **Gerenciador do WhatsApp** (business.facebook.com → WhatsApp Manager) → 
 | `#pausar 5511988887777` | Para o Jarvis naquele contato (você assume) |
 | `#retomar 5511988887777` | O Jarvis volta a atender aquele contato |
 
-> ⚠️ **Janela de 24h do dono:** o aviso para o dono também é uma mensagem do WhatsApp. Se o dono não falou com o número do Jarvis nas últimas 24h, a Meta bloqueia mensagens livres. Para não perder avisos, mande um `#status` todo dia, ou crie um **template de utilidade** aprovado para o aviso (próximo passo de evolução). Os avisos não entregues ficam registrados no log do servidor.
+> ⚠️ **Janela de 24h do dono:** o aviso para o dono também é uma mensagem do WhatsApp. Se o dono não falou com o número do Jarvis nas últimas 24h, a Meta bloqueia mensagens livres. A solução é um **template de utilidade**, que o Jarvis usa automaticamente quando a mensagem normal é recusada:
+>
+> 1. No WhatsApp Manager → **Modelos de mensagem** → **Criar modelo**.
+> 2. Categoria **Utilidade**, nome `aviso_atendimento`, idioma **Português (BR)**.
+> 3. Corpo: `Novo atendimento precisa da equipe: {{1}}. Abra o WhatsApp para responder o cliente.` (no exemplo do `{{1}}`, coloque: `Ana (+5511988887777) · Motivo: pediu orçamento personalizado`).
+> 4. Envie para aprovação (costuma levar de minutos a algumas horas).
+> 5. Depois de aprovado, coloque `OWNER_TEMPLATE_NAME=aviso_atendimento` nas variáveis.
+>
+> Até o template ser aprovado, mande um `#status` por dia para manter a janela aberta. Os avisos não entregues ficam no log do servidor.
 
 **Como o humano responde:**
 

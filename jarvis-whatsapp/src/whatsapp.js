@@ -96,6 +96,22 @@ export async function sendText(phoneNumberId, to, text) {
   }
 }
 
+/** Envia um template aprovado (única forma de falar com alguém fora da janela de 24h). */
+export async function sendTemplate(phoneNumberId, to, name, lang, params = []) {
+  await graphPost(phoneNumberId, {
+    messaging_product: "whatsapp",
+    to,
+    type: "template",
+    template: {
+      name,
+      language: { code: lang },
+      components: params.length
+        ? [{ type: "body", parameters: params.map((text) => ({ type: "text", text })) }]
+        : [],
+    },
+  });
+}
+
 /** Marca como lida (dois tiques azuis) e mostra "digitando..." enquanto o Jarvis pensa. */
 export async function markReadAndTyping(phoneNumberId, messageId) {
   try {

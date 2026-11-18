@@ -126,3 +126,12 @@ test("fluxo completo: mensagem → Claude → ferramenta → resposta", async ()
   await new Promise((r) => setTimeout(r, 200));
   assert.equal(chamadasClaude.length, 2);
 });
+
+test("aviso do dono vira parâmetro de template válido", async () => {
+  const { templateParam } = await import("../src/server.js");
+  const p = templateParam("🔔 *Jarvis: atendimento*\nCliente: Ana\n\nMotivo:   reclamação");
+  assert.equal(p.includes("\n"), false);
+  assert.equal(p.includes("*"), false);
+  assert.equal(/\s{2,}/.test(p), false);
+  assert.ok(templateParam("x".repeat(2000)).length <= 900);
+});

@@ -4,7 +4,7 @@ import http from "node:http";
 import { pathToFileURL } from "node:url";
 import { config, missingConfig } from "./config.js";
 import { loadConversation, saveConversation, alreadySeen } from "./store.js";
-import { isValidSignature, parseIncoming, sendText, markReadAndTyping, downloadMedia } from "./whatsapp.js";
+import { isValidSignature, parseIncoming, sendText, sendTemplate, markReadAndTyping, downloadMedia } from "./whatsapp.js";
 import { respond, buildUserContent } from "./jarvis.js";
 
 const AVISOS_POR_TIPO = {
@@ -56,9 +56,24 @@ async function notifyOwner(phoneNumberId, text) {
   try {
     await sendText(phoneNumberId, config.ownerWhatsapp, text);
   } catch (err) {
-    // Fora da janela de 24h com o dono, a Meta exige template. Veja o passo a passo.
+    // Fora da janela de 24h com o dono, a Meta só aceita template aprovado.
+    if (config.ownerTemplate.name) {
+      try {
+        await sendTemplate(phoneNumberId, config.ownerWhatsapp, config.ownerTemplate.name,
+          config.ownerTemplate.lang, [templateParam(text)]);
+        return;
+      } catch (err2) {
+        console.warn("Template de aviso também falhou:", err2.message);
+      }
+    }
     console.warn("Não consegui avisar o dono pelo WhatsApp:", err.message, "\n" + text);
   }
+}
+
+/** Parâmetros de template não aceitam quebra de linha nem formatação: vira uma linha só. */
+export function templateParam(text, max = 900) {
+  const linha = text.replace(/[*_~]/g, "").replace(/\s*\n+\s*/g, " · ").replace(/\s{2,}/g, " ").trim();
+  return linha.length > max ? linha.slice(0, max - 1) + "…" : linha;
 }
 
 /** Comandos do dono: #pausar 5511..., #retomar 5511..., #status */
