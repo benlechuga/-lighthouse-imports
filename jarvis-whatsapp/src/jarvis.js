@@ -28,7 +28,23 @@ const REGRAS_FIXAS = `
 - Você é o assistente desta empresa e atende apenas assuntos ligados a ela. Pedidos sem relação com o negócio (tarefas escolares, código, assuntos gerais) devem ser recusados com educação, trazendo a conversa de volta para o que a empresa oferece.
 `;
 
-const SYSTEM_PROMPT = fs.readFileSync(PROMPT_FILE, "utf8").trim() + "\n\n" + REGRAS_FIXAS.trim();
+/**
+ * Monta o prompt de sistema a partir do texto do arquivo do cliente.
+ * Comentários <!-- ... --> são anotações para quem edita o arquivo e não vão para o Claude.
+ */
+export function montarPrompt(texto) {
+  const limpo = texto.replace(/<!--[\s\S]*?-->/g, "").replace(/\n{3,}/g, "\n\n").trim();
+  return limpo + "\n\n" + REGRAS_FIXAS.trim();
+}
+
+const SYSTEM_PROMPT = montarPrompt(fs.readFileSync(PROMPT_FILE, "utf8"));
+
+if (SYSTEM_PROMPT.includes("[NOME DA EMPRESA]")) {
+  console.warn(
+    "⚠️  O prompt em uso ainda é o modelo (prompts/jarvis.md). " +
+      "Defina JARVIS_PROMPT_FILE com o prompt do cliente, por exemplo prompts/lighthouse.md ou prompts/dualia.md.",
+  );
+}
 
 // ---------------------------------------------------------------------------
 // Ferramentas que o Jarvis pode usar. A lista é fixa (não muda no meio da

@@ -168,7 +168,15 @@ Não funcionou? Veja a seção [14. Problemas comuns](#14-problemas-comuns).
 
 ## 8. Personalizar o Jarvis para o negócio
 
-Tudo que o Jarvis sabe sobre a empresa está em **`prompts/jarvis.md`**. Preencha:
+Tudo que o Jarvis sabe sobre a empresa está num arquivo de prompt. O servidor usa o arquivo indicado em **`JARVIS_PROMPT_FILE`**:
+
+- `prompts/lighthouse.md`: Lighthouse Imports, pronto.
+- `prompts/dualia.md`: Dualia, pronto.
+- `prompts/jarvis.md`: modelo em branco. Para um cliente novo, copie para `prompts/<cliente>.md` e aponte `JARVIS_PROMPT_FILE` para ele. Se o servidor subir com o modelo, ele avisa no log.
+
+Comentários `<!-- ... -->` no arquivo são anotações para quem edita e não chegam ao Claude.
+
+No prompt de um cliente novo, preencha:
 
 - **Sobre a empresa:** o que faz, cidade, horário, links.
 - **Produtos e serviços:** com preço só se puder ser passado pelo WhatsApp.
@@ -187,6 +195,7 @@ Dicas:
 
 | Variável | Para que serve |
 |---|---|
+| `JARVIS_PROMPT_FILE` | Qual prompt usar: `prompts/lighthouse.md`, `prompts/dualia.md` ou o do cliente |
 | `CLAUDE_MODEL` | `claude-opus-5-5` (padrão, mais inteligente), `claude-sonnet-5-5` (mais barato), `claude-haiku-5-5` (o mais barato; nesse caso deixe `CLAUDE_FALLBACKS` vazio) |
 | `CLAUDE_EFFORT` | `low` para atendimento rápido; `medium` se precisar de mais raciocínio |
 | `DEBOUNCE_MS` | Quanto tempo esperar para juntar mensagens picadas |
@@ -356,7 +365,7 @@ A resposta aparece no terminal do servidor, sem enviar nada para o WhatsApp.
 - [ ] Token permanente (Usuário do Sistema) no `.env`
 - [ ] App Secret e Verify Token no `.env`
 - [ ] Chave do Claude com limite de gasto
-- [ ] `prompts/jarvis.md` preenchido e testado com `npm run chat`
+- [ ] Prompt do cliente preenchido, `JARVIS_PROMPT_FILE` apontando para ele e testado com `npm run chat`
 - [ ] Servidor no ar com HTTPS e volume persistente
 - [ ] Webhook verificado **e** campo `messages` assinado
 - [ ] Teste real: texto, várias mensagens seguidas, foto, pedido de orçamento, pedido de humano

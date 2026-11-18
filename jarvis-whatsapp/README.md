@@ -48,9 +48,11 @@ npm start                 # sobe o webhook na porta 3000
 
 ## Personalizar para um cliente
 
-1. Edite `prompts/jarvis.md` com os dados reais da empresa (produtos, preços, FAQ, tom de voz).
-2. Teste com `npm run chat` até as respostas ficarem como você quer.
+1. Copie `prompts/jarvis.md` (o modelo) para `prompts/<cliente>.md` e preencha com os dados reais da empresa (produtos, preços, FAQ, tom de voz).
+2. Aponte `JARVIS_PROMPT_FILE=prompts/<cliente>.md` no `.env` e teste com `npm run chat` até as respostas ficarem como você quer.
 3. Suba uma instância por cliente, cada uma com seu próprio `.env` (número, token e prompt).
+
+Prompts prontos: `prompts/lighthouse.md` (Lighthouse Imports) e `prompts/dualia.md` (Dualia). Comentários `<!-- ... -->` dentro do prompt são anotações para quem edita e não vão para o Claude.
 
 ## Arquivos
 
@@ -59,7 +61,8 @@ src/server.js      webhook HTTP, fila por contato, comandos do dono
 src/jarvis.js      conversa com o Claude, ferramentas, resumo de histórico
 src/whatsapp.js    envio, assinatura, download de mídia (Graph API)
 src/store.js       persistência em JSON (troque por banco quando escalar)
-prompts/jarvis.md  personalidade e conhecimento do negócio
+prompts/jarvis.md  modelo de prompt para um cliente novo
+prompts/lighthouse.md, prompts/dualia.md  prompts prontos (escolha com JARVIS_PROMPT_FILE)
 scripts/chat.js    chat de teste no terminal
 scripts/simular-webhook.js  simula a Meta enviando uma mensagem
 ```

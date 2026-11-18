@@ -21,10 +21,12 @@ Resumo da sessão para continuar o trabalho em outra conversa. Cole este arquivo
 | `src/whatsapp.js` | Graph API: envio de texto e template, assinatura `X-Hub-Signature-256`, marcar como lida + "digitando", download de imagem |
 | `src/store.js` | Conversas em `data/conversas/*.json`, leads em `data/leads.jsonl`, ignora webhooks repetidos |
 | `src/config.js` | Variáveis de ambiente |
-| `prompts/jarvis.md` | Personalidade e conhecimento do negócio. **Ainda é um modelo com campos entre colchetes, falta preencher** |
+| `prompts/lighthouse.md` | Prompt da **Lighthouse Imports**, preenchido em 18/11/2026 a partir do `CLAUDE.md` e do treinamento SDR v2.2 do Pedro (branch `claude/treinamento-sdr-pedro`): estudo de viabilidade gratuito (7 a 15 dias), 5 perguntas de qualificação, 30/70 ou 50/50 com pagamento direto ao fabricante, objeções, sem preço/MOQ/referências |
+| `prompts/dualia.md` | Prompt da **Dualia**, preenchido em 18/11/2026 a partir do `DUALIA_projeto.md` e das mensagens de prospecção de Itajaí: objetivo é agendar a visita sem compromisso; não fala preço (as tabelas ainda são hipótese); demonstração e confirmação de horário ficam com o Benjamin |
+| `prompts/jarvis.md` | Modelo em branco para cliente novo (o servidor avisa no log se subir com ele) |
 | `scripts/chat.js` | `npm run chat`: conversa com o Jarvis no terminal, sem WhatsApp |
 | `scripts/simular-webhook.js` | `npm run simular -- "texto"`: simula a Meta enviando uma mensagem |
-| `test/servidor.test.js` | 5 testes com o Claude simulado (`npm test`), todos passando |
+| `test/servidor.test.js` | 6 testes com o Claude simulado (`npm test`), todos passando; o 6º confere que os prompts prontos não têm campo do modelo nem comentário vazando |
 | `Dockerfile`, `railway.json` | Publicação (Railway com Root Directory = `jarvis-whatsapp` e volume em `/app/data`) |
 | `docs/PASSO-A-PASSO.md` | Guia completo do zero até produção, em português (15 seções) |
 | `docs/PROMPT-CLAUDE-CHROME.md` | Prompt para o Claude in Chrome fazer a configuração na Meta e no Railway |
@@ -48,6 +50,11 @@ Resumo da sessão para continuar o trabalho em outra conversa. Cole este arquivo
 - [x] Código completo e testado com as APIs simuladas
 - [x] Guia passo a passo, prompt para o Claude in Chrome e configuração do Railway
 - [x] Tudo commitado e enviado para o GitHub
+- [x] Prompts reais da Lighthouse e da Dualia; escolha por `JARVIS_PROMPT_FILE` (18/11/2026)
+- [x] Comentários `<!-- -->` no prompt são removidos antes de ir para o Claude (18/11/2026)
+
+**Decisão pendente com o usuário (18/11/2026)**
+- Qual número atende qual prompt. Cada número oficial roda uma instância com um prompt. Hoje o (47) 99605-6084 mistura prospecção da Dualia e da Lighthouse (o Pedro também usa) e o perfil se chama "Lighthouse business"; o (47) 99148-8351 é o da Lighthouse com as conversas dos fornecedores chineses. Se um número continuar servindo os dois negócios, um só prompt não atende bem: separar os números ou juntar os dois prompts num só.
 
 **Ainda não testado de verdade**
 - [ ] Chamada real ao Claude (falta a chave da Anthropic)
@@ -68,7 +75,7 @@ O usuário pretende fazer os passos 2 a 7 com o Claude in Chrome, usando `docs/P
 
 ## Próximos passos sugeridos para a nova sessão
 
-1. **Preencher `prompts/jarvis.md`** com os dados reais da empresa: o que vende, preços, cidade, horário, pagamento, prazos, FAQ, próximo passo do funil e o que o Jarvis não pode fazer. Testar com `npm run chat`.
+1. ~~Preencher o prompt~~ Feito em 18/11/2026 (`prompts/lighthouse.md` e `prompts/dualia.md`). Falta só **testar de verdade** com `JARVIS_PROMPT_FILE=prompts/<negócio>.md npm run chat`, quando houver chave da Anthropic, e ajustar o texto pelo que sair.
 2. **Revisar a configuração** a partir do resumo que o Claude in Chrome devolver (ID do número, ID da conta WhatsApp, URL do Railway, status do webhook e do template).
 3. **Primeiro teste real:** mandar "Oi" para o número de teste e conferir os logs do Railway.
 4. **Evoluções possíveis:**

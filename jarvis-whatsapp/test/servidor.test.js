@@ -127,6 +127,20 @@ test("fluxo completo: mensagem → Claude → ferramenta → resposta", async ()
   assert.equal(chamadasClaude.length, 2);
 });
 
+test("prompts dos clientes: sem comentários nem campos a preencher", async () => {
+  const { montarPrompt } = await import("../src/jarvis.js");
+  for (const nome of ["lighthouse.md", "dualia.md"]) {
+    const texto = await fs.readFile(new URL(`../prompts/${nome}`, import.meta.url), "utf8");
+    const prompt = montarPrompt(texto);
+    assert.equal(prompt.includes("<!--"), false, `${nome}: comentário vazou para o prompt`);
+    assert.equal(/\[[^\]]*(NOME|descreva|PREENCHER|Produto\/serviço)[^\]]*\]/i.test(prompt), false, `${nome}: campo do modelo sem preencher`);
+    assert.match(prompt, /^# Quem você é/, `${nome}: deve começar pela identidade`);
+    assert.match(prompt, /# Regras do canal \(WhatsApp\)/, `${nome}: faltam as regras fixas`);
+    assert.match(prompt, /registrar_lead/);
+    assert.match(prompt, /transferir_para_humano/);
+  }
+});
+
 test("aviso do dono vira parâmetro de template válido", async () => {
   const { templateParam } = await import("../src/server.js");
   const p = templateParam("🔔 *Jarvis: atendimento*\nCliente: Ana\n\nMotivo:   reclamação");

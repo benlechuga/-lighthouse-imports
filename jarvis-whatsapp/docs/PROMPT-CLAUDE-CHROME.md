@@ -38,6 +38,7 @@ ETAPA 3. Railway (railway.com)
    ANTHROPIC_API_KEY = (vou colar eu mesmo: me peça)
    CLAUDE_MODEL = claude-opus-5-5
    CLAUDE_EFFORT = low
+   JARVIS_PROMPT_FILE = [prompts/lighthouse.md OU prompts/dualia.md, conforme o número]
 4. Adicione um Volume montado em /app/data.
 5. Settings → Networking → Generate Domain. Anote a URL.
 6. Espere o deploy ficar verde e abra a URL: deve aparecer "Jarvis WhatsApp online".
