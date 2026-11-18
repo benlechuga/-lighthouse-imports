@@ -108,6 +108,7 @@ async function handleBatch(waId, { items, phoneNumberId, lastMessageId }) {
     return;
   }
 
+  console.log(`← ${items.length} mensagem(ns) de ${waId} (${items.map((i) => i.type).join(", ")})`);
   await markReadAndTyping(phoneNumberId, lastMessageId);
 
   const conteudo = [];
@@ -142,7 +143,10 @@ async function handleBatch(waId, { items, phoneNumberId, lastMessageId }) {
     resposta = "Desculpe, tive uma instabilidade aqui. Pode repetir sua última mensagem em instantes? 🙏";
   }
   await saveConversation(conv);
-  if (resposta) await sendText(phoneNumberId, waId, resposta);
+  if (resposta) {
+    await sendText(phoneNumberId, waId, resposta);
+    console.log(`→ resposta enviada para ${waId} (${resposta.length} caracteres)`);
+  }
 }
 
 // ---------------------------------------------------------------------------
