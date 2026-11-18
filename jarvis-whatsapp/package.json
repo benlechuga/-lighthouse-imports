@@ -1,0 +1,19 @@
+{
+  "name": "jarvis-whatsapp",
+  "version": "1.0.0",
+  "description": "Jarvis: atendente com IA (Claude) na API oficial do WhatsApp (Cloud API da Meta)",
+  "type": "module",
+  "main": "src/server.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env src/server.js",
+    "chat": "node --env-file-if-exists=.env scripts/chat.js",
+    "simular": "node --env-file-if-exists=.env scripts/simular-webhook.js",
+    "test": "node --test test/*.test.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.10.0"
+  }
+}
