@@ -1,11 +1,14 @@
 // Servidor do webhook: recebe mensagens do WhatsApp, chama o Jarvis e responde.
 
+import fs from "node:fs";
 import http from "node:http";
 import { pathToFileURL } from "node:url";
 import { config, missingConfig } from "./config.js";
 import { loadConversation, saveConversation, alreadySeen } from "./store.js";
 import { isValidSignature, parseIncoming, sendText, sendTemplate, markReadAndTyping, downloadMedia } from "./whatsapp.js";
 import { respond, buildUserContent } from "./jarvis.js";
+
+const PAGINA_PRIVACIDADE = fs.readFileSync(new URL("./privacidade.html", import.meta.url), "utf8");
 
 const AVISOS_POR_TIPO = {
   audio: "[SISTEMA] O cliente enviou um áudio. Você ainda não consegue ouvir áudios; peça com gentileza que escreva.",
@@ -168,6 +171,12 @@ export function createServer() {
     if (req.method === "GET" && url.pathname === "/") {
       res.writeHead(200, { "Content-Type": "text/plain; charset=utf-8" });
       return res.end("Jarvis WhatsApp online");
+    }
+
+    // Política de privacidade pública (exigida pela Meta para publicar o app)
+    if (req.method === "GET" && (url.pathname === "/privacidade" || url.pathname === "/privacy")) {
+      res.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
+      return res.end(PAGINA_PRIVACIDADE);
     }
 
     // Verificação do webhook (feita pela Meta uma vez, ao cadastrar a URL)

@@ -84,6 +84,15 @@ test("verificação do webhook (GET)", async () => {
   assert.equal(ruim.status, 403);
 });
 
+test("política de privacidade pública", async () => {
+  for (const caminho of ["/privacidade", "/privacy"]) {
+    const res = await fetch(`${baseUrl}${caminho}`);
+    assert.equal(res.status, 200);
+    assert.match(res.headers.get("content-type"), /text\/html/);
+    assert.match(await res.text(), /Política de Privacidade/);
+  }
+});
+
 test("fluxo completo: mensagem → Claude → ferramenta → resposta", async () => {
   const payload = {
     entry: [{ changes: [{ value: {
