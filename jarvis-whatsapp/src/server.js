@@ -5,7 +5,7 @@ import http from "node:http";
 import { pathToFileURL } from "node:url";
 import { config, missingConfig } from "./config.js";
 import { loadConversation, saveConversation, alreadySeen } from "./store.js";
-import { isValidSignature, parseIncoming, sendText, sendTemplate, markReadAndTyping, downloadMedia } from "./whatsapp.js";
+import { isValidSignature, numeroBR, parseIncoming, sendText, sendTemplate, markReadAndTyping, downloadMedia } from "./whatsapp.js";
 import { respond, buildUserContent } from "./jarvis.js";
 
 const PAGINA_PRIVACIDADE = fs.readFileSync(new URL("./privacidade.html", import.meta.url), "utf8");
@@ -216,7 +216,7 @@ export function createServer() {
       }
       for (const msg of parseIncoming(payload)) {
         if (alreadySeen(msg.id)) continue;
-        if (config.ownerWhatsapp && msg.from === config.ownerWhatsapp && msg.text.startsWith("#")) {
+        if (config.ownerWhatsapp && numeroBR(msg.from) === numeroBR(config.ownerWhatsapp) && msg.text.startsWith("#")) {
           handleOwnerCommand(msg).catch((e) => console.error("Comando do dono falhou:", e));
           continue;
         }

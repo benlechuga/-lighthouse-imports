@@ -69,6 +69,15 @@ test("assinatura do webhook", async () => {
   assert.equal(isValidSignature(body, undefined, SECRET), false);
 });
 
+test("nono dígito de celular brasileiro", async () => {
+  const { numeroBR } = await import("../src/whatsapp.js");
+  assert.equal(numeroBR("554796056084"), "5547996056084"); // como o webhook entrega
+  assert.equal(numeroBR("5547996056084"), "5547996056084"); // já tem o 9
+  assert.equal(numeroBR("554733334444"), "554733334444");   // fixo: não mexe
+  assert.equal(numeroBR("15551757374"), "15551757374");     // fora do Brasil: não mexe
+  assert.equal(numeroBR("+55 (47) 9605-6084"), "5547996056084");
+});
+
 test("divide mensagens longas", async () => {
   const { splitMessage } = await import("../src/whatsapp.js");
   const partes = splitMessage("palavra ".repeat(1500));

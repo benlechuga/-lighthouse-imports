@@ -84,12 +84,23 @@ export function splitMessage(text, limit = 3900) {
   return parts;
 }
 
+/**
+ * Celular brasileiro com 12 dígitos (55 + DDD + 8) ganha o nono dígito.
+ * O webhook entrega números antigos sem o 9 (ex.: 554796056084), mas a lista de
+ * destinatários de teste da Meta e o OWNER_WHATSAPP costumam ter o 9: sem isso o
+ * envio falha com o erro 131030.
+ */
+export function numeroBR(waId) {
+  const n = String(waId || "").replace(/\D/g, "");
+  return /^55\d{2}[6-9]\d{7}$/.test(n) ? n.slice(0, 4) + "9" + n.slice(4) : n;
+}
+
 export async function sendText(phoneNumberId, to, text) {
   for (const part of splitMessage(text)) {
     await graphPost(phoneNumberId, {
       messaging_product: "whatsapp",
       recipient_type: "individual",
-      to,
+      to: numeroBR(to),
       type: "text",
       text: { body: part, preview_url: false },
     });
@@ -100,7 +111,7 @@ export async function sendText(phoneNumberId, to, text) {
 export async function sendTemplate(phoneNumberId, to, name, lang, params = []) {
   await graphPost(phoneNumberId, {
     messaging_product: "whatsapp",
-    to,
+    to: numeroBR(to),
     type: "template",
     template: {
       name,
