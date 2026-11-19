@@ -147,7 +147,7 @@ test("fluxo completo: mensagem → Claude → ferramenta → resposta", async ()
 
 test("prompts dos clientes: sem comentários nem campos a preencher", async () => {
   const { montarPrompt } = await import("../src/jarvis.js");
-  for (const nome of ["lighthouse.md", "dualia.md"]) {
+  for (const nome of ["lighthouse.md", "dualia.md", "lighthouse-dualia.md"]) {
     const texto = await fs.readFile(new URL(`../prompts/${nome}`, import.meta.url), "utf8");
     const prompt = montarPrompt(texto);
     assert.equal(prompt.includes("<!--"), false, `${nome}: comentário vazou para o prompt`);
