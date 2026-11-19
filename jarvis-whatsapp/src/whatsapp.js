@@ -3,7 +3,7 @@
 import crypto from "node:crypto";
 import { config } from "./config.js";
 
-const graph = (p) => `https://graph.facebook.com/${config.whatsapp.graphVersion}/${p}`;
+export const graph = (p) => `${config.whatsapp.graphBase}/${config.whatsapp.graphVersion}/${p}`;
 
 /** Confere a assinatura X-Hub-Signature-256 para garantir que o webhook veio da Meta. */
 export function isValidSignature(rawBody, signatureHeader, appSecret = config.whatsapp.appSecret) {
@@ -47,6 +47,52 @@ export function parseIncoming(payload) {
   return out;
 }
 
+/**
+ * Mensagens que a EMPRESA mandou pelo app WhatsApp Business do celular (coexistência):
+ * chegam no campo "smb_message_echoes". Não são do cliente e nunca geram resposta.
+ */
+export function parseEchoes(payload) {
+  const out = [];
+  for (const entry of payload?.entry ?? []) {
+    for (const change of entry.changes ?? []) {
+      const value = change.value ?? {};
+      for (const m of value.message_echoes ?? []) {
+        out.push({
+          id: m.id,
+          to: String(m.to ?? "").replace(/\D/g, ""),
+          phoneNumberId: value.metadata?.phone_number_id,
+          timestamp: Number(m.timestamp) * 1000,
+          type: m.type,
+        });
+      }
+    }
+  }
+  return out;
+}
+
+/** Lista os campos (field) de um webhook, ex.: ["messages"], ["history"], ["account_update"]. */
+export function webhookFields(payload) {
+  const fields = [];
+  for (const entry of payload?.entry ?? []) {
+    for (const change of entry.changes ?? []) if (change.field) fields.push({ field: change.field, wabaId: entry.id, value: change.value });
+  }
+  return fields;
+}
+
+// IDs das mensagens que o próprio Jarvis enviou pela API. Se a Meta um dia mandar
+// eco delas, não confundimos com um humano respondendo pelo celular.
+const enviadasPelaApi = new Map();
+export function enviadaPelaApi(id) {
+  return enviadasPelaApi.has(id);
+}
+function registrarEnvio(data) {
+  const id = data?.messages?.[0]?.id;
+  if (!id) return;
+  const agora = Date.now();
+  for (const [k, t] of enviadasPelaApi) if (agora - t > 24 * 3600_000) enviadasPelaApi.delete(k);
+  enviadasPelaApi.set(id, agora);
+}
+
 async function graphPost(phoneNumberId, body) {
   if (config.whatsapp.dryRun) {
     console.log(`[dry-run] → WhatsApp`, JSON.stringify(body));
@@ -66,6 +112,7 @@ async function graphPost(phoneNumberId, body) {
     e.details = data?.error;
     throw e;
   }
+  registrarEnvio(data);
   return data;
 }
 

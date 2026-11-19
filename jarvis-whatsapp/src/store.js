@@ -18,7 +18,8 @@ function fileFor(waId) {
  *   waId, nome,
  *   messages: [...],      // histórico no formato da API do Claude (só cresce)
  *   resumo: "",           // resumo de conversas antigas, quando o histórico é compactado
- *   pausado: false,       // true = humano assumiu, o Jarvis não responde
+ *   pausado: false,       // true = humano assumiu (#pausar ou transferência), o Jarvis não responde
+ *   pausadoAte: ms,       // opcional: equipe respondeu pelo celular (coexistência); silêncio até essa hora
  *   atualizadoEm: ISO
  * }
  */

@@ -11,6 +11,8 @@ export const config = {
     verifyToken: env.WHATSAPP_VERIFY_TOKEN || "",
     phoneNumberId: env.WHATSAPP_PHONE_NUMBER_ID || "",
     graphVersion: env.GRAPH_API_VERSION || "v23.0",
+    // Endereço da Graph API (só muda nos testes, que usam um servidor falso)
+    graphBase: (env.GRAPH_API_BASE || "https://graph.facebook.com").replace(/\/+$/, ""),
     dryRun: env.WHATSAPP_DRY_RUN === "true",
   },
 
@@ -25,6 +27,17 @@ export const config = {
     effort: env.CLAUDE_EFFORT || "low",
     fallbacks: env.CLAUDE_FALLBACKS ?? "default",
   },
+
+  // Cadastro Incorporado (coexistência): página /conectar?k=<CONECTAR_KEY>
+  conectar: {
+    appId: env.FB_APP_ID || "",
+    configId: env.ES_CONFIG_ID || "",
+    key: env.CONECTAR_KEY || "",
+    esVersion: env.ES_VERSION || "v5",
+  },
+  // Quando alguém responde pelo app WhatsApp Business do celular (coexistência),
+  // o Jarvis fica em silêncio neste contato por este número de horas.
+  humanoPausaHoras: Number(env.HUMANO_PAUSA_HORAS ?? 12),
 
   debounceMs: Number(env.DEBOUNCE_MS ?? 3000),
   maxHistoryMessages: Number(env.MAX_HISTORY_MESSAGES || 40),

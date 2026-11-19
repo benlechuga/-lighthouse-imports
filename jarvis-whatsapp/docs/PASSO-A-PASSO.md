@@ -241,9 +241,19 @@ No **Gerenciador do WhatsApp** (business.facebook.com → WhatsApp Manager) → 
 
 **Opção B: coexistência (manter o app WhatsApp Business no celular)**
 
-- Permite usar o **mesmo número** no app WhatsApp Business **e** na API. O dono continua respondendo pelo celular, e o Jarvis atende pela API.
-- No fluxo de adicionar número, escolha a opção de conectar um número que já usa o app WhatsApp Business e siga a leitura do QR Code no celular.
-- Verifique se o recurso está disponível para o seu número e país no momento da configuração, porque a Meta libera por etapas.
+O **mesmo número** fica no app WhatsApp Business do celular **e** na API: a equipe continua respondendo pelo celular, e o Jarvis atende pela API. Esse caminho **não** é feito pelo "Adicionar número" do Gerenciador: a Meta só libera pelo **Cadastro Incorporado** (Embedded Signup), e só para quem é **Provedor de Tecnologia** ou **Parceiro de Soluções**. O servidor do Jarvis já traz a página pronta em `/conectar`.
+
+1. **Provedor de Tecnologia:** no app (developers.facebook.com) → Casos de uso → WhatsApp → **Torne-se um Provedor de Tecnologia** → *Independent Tech Provider* → **Iniciar integração** (aceita os Termos de Provedor de Tecnologia). Faça também a **verificação da empresa** (Central de Segurança do portfólio). Para ligar números de **outras** empresas (clientes da Dualia), o app precisa de **acesso avançado** às permissões `whatsapp_business_management` e `whatsapp_business_messaging` (análise do app). Administradores e desenvolvedores do app já conseguem testar o fluxo com o próprio Facebook.
+2. **Login do Facebook para Empresas:** adicione o produto ao app. Em **Configurações** → *Configurações de OAuth do cliente*, ative Login do cliente com OAuth, Login do OAuth da web, Aplicar HTTPS, Login com OAuth via navegador incorporado, modo restrito para URIs de redirecionamento e **Login com o SDK do JavaScript**. Em **Domínios permitidos** e **URIs de redirecionamento de OAuth válidos**, coloque o domínio do servidor (ex.: `https://lighthouse-imports-production.up.railway.app/`).
+3. **Configuração do cadastro:** em Login do Facebook para Empresas → **Configurações** → **Criar a partir de modelo** → *Configuração do cadastro incorporado do WhatsApp* (ou **Criar configuração** com a variação **Cadastro Incorporado do WhatsApp**). Anote o **ID da configuração**.
+4. **Webhooks:** em WhatsApp → Configuração, assine os campos `messages`, `smb_message_echoes`, `history`, `smb_app_state_sync` e `account_update`.
+5. **Variáveis no servidor:** `FB_APP_ID` (ID do app), `ES_CONFIG_ID` (ID da configuração), `CONECTAR_KEY` (um texto longo e aleatório que só você conhece) e, se quiser mudar, `HUMANO_PAUSA_HORAS` (padrão 12) e `ES_VERSION` (padrão `v5`).
+6. **Conectar:** com o celular do número em mãos (app WhatsApp Business **2.24.17 ou mais novo**, aberto), abra `https://SEU-SERVIDOR/conectar?k=SUA_CONECTAR_KEY`, clique em **Conectar com o Facebook**, escolha **conectar uma conta existente do WhatsApp Business**, confirme no celular e **compartilhe o histórico**. A página troca o código pelo token, assina os webhooks da conta, pede a sincronização de contatos e histórico (a Meta só aceita uma vez, em até 24 horas) e confere se o número ficou `is_on_biz_app: true` e `platform_type: CLOUD_API`. Sem a chave certa, a página responde 404. O token da empresa não é salvo nem aparece no log; cada conexão fica registrada em `data/conexoes.jsonl` (só IDs e o resultado de cada etapa).
+7. **Token de envio:** o Jarvis envia com o `WHATSAPP_TOKEN` (usuário do sistema). Dê a esse usuário do sistema acesso à nova conta do WhatsApp no portfólio e troque o `WHATSAPP_PHONE_NUMBER_ID` pelo ID do número conectado.
+
+**Atendimento humano na coexistência:** quando alguém da equipe responde um cliente **pelo celular**, a Meta manda um eco (`smb_message_echoes`) e o Jarvis fica em silêncio com aquele cliente por `HUMANO_PAUSA_HORAS` (padrão 12 h). Se o cliente escrever nesse período, o Jarvis não responde. Passado o prazo, ele volta sabendo que houve atendimento humano. `#retomar <número>` encerra a pausa antes; `#pausar <número>` continua sendo a pausa sem prazo. Se a equipe responder enquanto o Jarvis ainda está escrevendo, a resposta do Jarvis é descartada.
+
+Limites: com coexistência o número tem vazão fixa de 20 mensagens por segundo; mensagens temporárias, de visualização única e listas de transmissão ficam desativadas no app; grupos não são sincronizados. Mensagens enviadas pelo app do celular continuam gratuitas.
 
 **Depois de adicionar:**
 

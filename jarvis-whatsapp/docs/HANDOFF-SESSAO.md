@@ -21,6 +21,7 @@ Resumo da sessão para continuar o trabalho em outra conversa. Cole este arquivo
 | `src/whatsapp.js` | Graph API: envio de texto e template, assinatura `X-Hub-Signature-256`, marcar como lida + "digitando", download de imagem |
 | `src/store.js` | Conversas em `data/conversas/*.json`, leads em `data/leads.jsonl`, ignora webhooks repetidos |
 | `src/config.js` | Variáveis de ambiente |
+| `src/conectar.js` | Página `/conectar?k=` do Cadastro Incorporado com coexistência: troca o código pelo token, assina os webhooks, sincroniza contatos e histórico e confere o número (token nunca salvo nem logado) |
 | `prompts/lighthouse.md` | Prompt da **Lighthouse Imports**, preenchido em 18/11/2026 a partir do `CLAUDE.md` e do treinamento SDR v2.2 do Pedro (branch `claude/treinamento-sdr-pedro`): estudo de viabilidade gratuito (7 a 15 dias), 5 perguntas de qualificação, 30/70 ou 50/50 com pagamento direto ao fabricante, objeções, sem preço/MOQ/referências |
 | `prompts/dualia.md` | Prompt da **Dualia**, preenchido em 18/11/2026 a partir do `DUALIA_projeto.md` e das mensagens de prospecção de Itajaí: objetivo é agendar a visita sem compromisso; não fala preço (as tabelas ainda são hipótese); demonstração e confirmação de horário ficam com o Benjamin |
 | `prompts/jarvis.md` | Modelo em branco para cliente novo (o servidor avisa no log se subir com ele) |
@@ -76,7 +77,13 @@ IDs e endereços da instalação de teste: app 1104944078981456, Phone Number ID
 
 1. **Ajustar o prompt da Lighthouse** pelas primeiras conversas reais (o primeiro teste real foi em 18/11/2026).
 2. **Conferir a aprovação** do template `aviso_atendimento` (Gerenciador do WhatsApp → Modelos de mensagem).
-3. **Decidir o número real** e qual prompt ele usa; repetir nele as três travas acima.
+3. **Número real (decidido em 19/11/2026): (47) 99605-6084 em coexistência**, com o prompt único `prompts/lighthouse-dualia.md` e avisos para o (47) 99148-8351. A Meta só faz coexistência por Cadastro Incorporado de Provedor de Tecnologia; a página está pronta em `/conectar?k=<CONECTAR_KEY>` (seção 10, opção B, do guia). Falta, nesta ordem:
+   - aceitar os Termos de Provedor de Tecnologia e concluir a verificação da empresa (LIGHT HOUSE IMPORTS LTDA);
+   - Login do Facebook para Empresas: OAuth com SDK do JavaScript, domínio do Railway e uma configuração do Cadastro Incorporado do WhatsApp (anotar o ID);
+   - no Railway: `FB_APP_ID=1104944078981456`, `ES_CONFIG_ID`, `CONECTAR_KEY`, `JARVIS_PROMPT_FILE=prompts/lighthouse-dualia.md`, `OWNER_WHATSAPP=5547991488351`;
+   - webhooks: assinar também `smb_message_echoes`, `history`, `smb_app_state_sync` e `account_update`;
+   - abrir `/conectar?k=...` com o celular do 99605-6084 em mãos; depois dar ao usuário do sistema `jarvis-bot` acesso à nova conta, trocar `WHATSAPP_PHONE_NUMBER_ID` e recriar o template `aviso_atendimento` nessa conta;
+   - para os clientes da Dualia: análise do app para acesso avançado.
 4. **Evoluções possíveis:**
    - Chatwoot como caixa de entrada para a equipe responder quem foi transferido.
    - Leads indo para n8n ou CRM via `LEADS_WEBHOOK_URL`.
