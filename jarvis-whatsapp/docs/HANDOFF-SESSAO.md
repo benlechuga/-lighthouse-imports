@@ -66,7 +66,7 @@ Resumo da sessão para continuar o trabalho em outra conversa. Cole este arquivo
 
 **Pendente com o usuário** (detalhes em `docs/PASSO-A-PASSO.md` e `docs/PROMPT-CLAUDE-CHROME.md`)
 1. ~~Passos 1 a 6 (portfólio, app, token, chave da Anthropic, Railway, webhook)~~ Feitos em 18/11/2026.
-7. Template `aviso_atendimento` aprovado e `OWNER_TEMPLATE_NAME` configurado.
+7. Template `aviso_atendimento`: enviado para análise em 19/11/2026 na conta de teste, com `OWNER_TEMPLATE_NAME=aviso_atendimento` já no Railway. Template vale só para a conta (WABA) onde foi criado: recriar na conta do número real.
 8. Número real (novo ou por coexistência com o app WhatsApp Business), verificação da empresa e forma de pagamento na conta do WhatsApp.
 9. Não usar o número banido até a revisão do WhatsApp sair.
 
@@ -75,7 +75,7 @@ IDs e endereços da instalação de teste: app 1104944078981456, Phone Number ID
 ## Próximos passos sugeridos para a nova sessão
 
 1. **Ajustar o prompt da Lighthouse** pelas primeiras conversas reais (o primeiro teste real foi em 18/11/2026).
-2. **Template `aviso_atendimento`** e `OWNER_TEMPLATE_NAME` no Railway.
+2. **Conferir a aprovação** do template `aviso_atendimento` (Gerenciador do WhatsApp → Modelos de mensagem).
 3. **Decidir o número real** e qual prompt ele usa; repetir nele as três travas acima.
 4. **Evoluções possíveis:**
    - Chatwoot como caixa de entrada para a equipe responder quem foi transferido.
