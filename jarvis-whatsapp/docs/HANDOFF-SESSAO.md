@@ -56,28 +56,27 @@ Resumo da sessão para continuar o trabalho em outra conversa. Cole este arquivo
 **Decisão pendente com o usuário (18/11/2026)**
 - Qual número atende qual prompt. Cada número oficial roda uma instância com um prompt. Hoje o (47) 99605-6084 mistura prospecção da Dualia e da Lighthouse (o Pedro também usa) e o perfil se chama "Lighthouse business"; o (47) 99148-8351 é o da Lighthouse com as conversas dos fornecedores chineses. Se um número continuar servindo os dois negócios, um só prompt não atende bem: separar os números ou juntar os dois prompts num só.
 
-**Ainda não testado de verdade**
-- [ ] Chamada real ao Claude (falta a chave da Anthropic)
-- [ ] Envio real pelo WhatsApp (falta configurar a Meta)
+**Testado de verdade (18/11/2026)**
+- [x] Meta: app "Jarvis Atendimento" publicado (política em `/privacidade`), número de teste +1 555 175-7374, webhook no Railway
+- [x] Conversa real do (47) 99605-6084 com o número de teste: mensagem chega, o Claude responde, a resposta chega no WhatsApp
+- Três travas resolvidas no caminho (fazer em toda instalação nova):
+  1. App não publicado só recebe os webhooks de teste do painel. Publicar exige URL de política de privacidade.
+  2. A conta do WhatsApp (WABA) precisa estar assinada no app: `POST /<WABA_ID>/subscribed_apps` no Graph API Explorer. Sem isso, nada chega ao servidor.
+  3. Nono dígito: o webhook entrega celulares antigos sem o 9 (`554796056084`); `numeroBR()` põe o 9 antes de enviar (erro 131030 sem isso).
 
 **Pendente com o usuário** (detalhes em `docs/PASSO-A-PASSO.md` e `docs/PROMPT-CLAUDE-CHROME.md`)
-1. Portfólio empresarial na Meta (business.facebook.com).
-2. App na Meta com o produto WhatsApp, número de teste e celular cadastrado como destinatário.
-3. Token permanente (Usuário do Sistema, validade "Nunca", permissões `whatsapp_business_messaging` e `whatsapp_business_management`) e a chave secreta do app.
-4. Chave da Anthropic com crédito e limite de gasto.
-5. Railway: deploy da branch, Root Directory `jarvis-whatsapp`, variáveis, volume em `/app/data`, domínio público.
-6. Webhook na Meta: `https://URL/webhook`, verify token e **assinatura do campo `messages`**.
+1. ~~Passos 1 a 6 (portfólio, app, token, chave da Anthropic, Railway, webhook)~~ Feitos em 18/11/2026.
 7. Template `aviso_atendimento` aprovado e `OWNER_TEMPLATE_NAME` configurado.
 8. Número real (novo ou por coexistência com o app WhatsApp Business), verificação da empresa e forma de pagamento na conta do WhatsApp.
 9. Não usar o número banido até a revisão do WhatsApp sair.
 
-O usuário pretende fazer os passos 2 a 7 com o Claude in Chrome, usando `docs/PROMPT-CLAUDE-CHROME.md` (precisa trocar os campos entre colchetes).
+IDs e endereços da instalação de teste: app 1104944078981456, Phone Number ID 1482534918276729, WABA de teste 1828852601571014, Railway `https://lighthouse-imports-production.up.railway.app` (projeto "blissful-prosperity", trial de 30 dias ou US$ 5).
 
 ## Próximos passos sugeridos para a nova sessão
 
-1. ~~Preencher o prompt~~ Feito em 18/11/2026 (`prompts/lighthouse.md` e `prompts/dualia.md`). Falta só **testar de verdade** com `JARVIS_PROMPT_FILE=prompts/<negócio>.md npm run chat`, quando houver chave da Anthropic, e ajustar o texto pelo que sair.
-2. **Revisar a configuração** a partir do resumo que o Claude in Chrome devolver (ID do número, ID da conta WhatsApp, URL do Railway, status do webhook e do template).
-3. **Primeiro teste real:** mandar "Oi" para o número de teste e conferir os logs do Railway.
+1. **Ajustar o prompt da Lighthouse** pelas primeiras conversas reais (o primeiro teste real foi em 18/11/2026).
+2. **Template `aviso_atendimento`** e `OWNER_TEMPLATE_NAME` no Railway.
+3. **Decidir o número real** e qual prompt ele usa; repetir nele as três travas acima.
 4. **Evoluções possíveis:**
    - Chatwoot como caixa de entrada para a equipe responder quem foi transferido.
    - Leads indo para n8n ou CRM via `LEADS_WEBHOOK_URL`.
