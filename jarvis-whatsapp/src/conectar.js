@@ -35,8 +35,9 @@ const js = (v) => JSON.stringify(v).replace(/</g, "\\u003c");
  * ligada; na v4 precisa do featureType. A versão vem de ES_VERSION (padrão v5).
  */
 export function extrasCadastro(versao = config.conectar.esVersion) {
-  if (versao === "v4") return { setup: {}, featureType: "whatsapp_business_app_onboarding" };
-  return { setup: {}, version: versao };
+  // sessionInfoVersion "3" faz a Meta mandar o postMessage WA_EMBEDDED_SIGNUP com os IDs.
+  if (versao === "v4") return { setup: {}, featureType: "whatsapp_business_app_onboarding", sessionInfoVersion: "3" };
+  return { setup: {}, version: versao, sessionInfoVersion: "3" };
 }
 
 export function paginaConectar(chave) {
@@ -147,6 +148,7 @@ export function paginaConectar(chave) {
           waba_id: sessao && sessao.waba_id,
           phone_number_id: sessao && sessao.phone_number_id,
           business_id: sessao && sessao.business_id,
+          pagina: location.origin + location.pathname,
         }),
       });
       const r = await res.json();
@@ -234,9 +236,18 @@ export async function finalizarConexao(body, { fetchImpl = fetch } = {}) {
   // 1. Troca o código (vale 5 minutos) pelo token da empresa
   let token;
   try {
-    const r = await chamar("GET", "oauth/access_token", {
-      query: { client_id: config.conectar.appId, client_secret: config.whatsapp.appSecret, code },
-    });
+    // O código do FB.login do SDK JS às vezes fica preso a um redirect_uri (erro 36008).
+    // Tenta sem redirect_uri (documentado), depois vazio, depois a URL da própria página.
+    const pagina = typeof body?.pagina === "string" && /^https:\/\/[a-z0-9.-]+\/conectar$/i.test(body.pagina) ? body.pagina : "";
+    const tentativas = [undefined, "", ...(pagina ? [pagina] : [])];
+    let r, ultimoErro;
+    for (const redirect of tentativas) {
+      const query = { client_id: config.conectar.appId, client_secret: config.whatsapp.appSecret, code };
+      if (redirect !== undefined) query.redirect_uri = redirect;
+      try { r = await chamar("GET", "oauth/access_token", { query }); break; }
+      catch (err) { ultimoErro = err; if (!/redirect_uri/i.test(err.message)) break; }
+    }
+    if (!r) throw ultimoErro;
     token = r.access_token;
     if (!token) throw new Error("a Meta não devolveu o token");
     segredos.push(token);

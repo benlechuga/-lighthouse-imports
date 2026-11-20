@@ -34,6 +34,8 @@ const fakeClaude = http.createServer(async (req, res) => {
 // --- Graph API falsa: usada pela página /conectar (Cadastro Incorporado) ---
 const TOKEN_EMPRESA = "EAA-token-da-empresa-NAO-PODE-VAZAR";
 const CODIGO = "codigo-trocavel-NAO-PODE-VAZAR";
+const CODIGO_PRESO = "codigo-preso-ao-redirect-NAO-PODE-VAZAR";
+const PAGINA = "https://jarvis.exemplo.com/conectar";
 const chamadasGraph = [];
 const fakeGraph = http.createServer(async (req, res) => {
   let body = "";
@@ -42,6 +44,11 @@ const fakeGraph = http.createServer(async (req, res) => {
   chamadasGraph.push({ method: req.method, path: u.pathname, query: Object.fromEntries(u.searchParams), auth: req.headers.authorization ?? "", body });
   const json = (o, status = 200) => { res.writeHead(status, { "Content-Type": "application/json" }); res.end(JSON.stringify(o)); };
   if (u.pathname.endsWith("/oauth/access_token")) {
+    if (u.searchParams.get("code") === CODIGO_PRESO) {
+      return u.searchParams.get("redirect_uri") === PAGINA
+        ? json({ access_token: TOKEN_EMPRESA, token_type: "bearer" })
+        : json({ error: { message: "Error validating verification code. Please make sure your redirect_uri is identical to the one you used in the OAuth dialog request", code: 100, error_subcode: 36008 } }, 400);
+    }
     return u.searchParams.get("code") === CODIGO
       ? json({ access_token: TOKEN_EMPRESA, token_type: "bearer" })
       : json({ error: { message: "código inválido" } }, 400);
@@ -213,7 +220,32 @@ test("página /conectar só abre com a chave", async () => {
   assert.match(html, /response_type: "code"/);
   assert.match(html, /connect\.facebook\.net/);
   const { extrasCadastro } = await import("../src/conectar.js");
-  assert.deepEqual(extrasCadastro("v4"), { setup: {}, featureType: "whatsapp_business_app_onboarding" });
+  assert.deepEqual(extrasCadastro("v4"), { setup: {}, featureType: "whatsapp_business_app_onboarding", sessionInfoVersion: "3" });
+  assert.match(html, /"sessionInfoVersion":"3"/);
+});
+
+test("finalizar conexão: código preso ao redirect_uri tenta de novo com a URL da página", async () => {
+  chamadasGraph.length = 0;
+  const texto = await (await fetch(`${baseUrl}/conectar/finalizar?k=chave-secreta-da-pagina`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ code: CODIGO_PRESO, waba_id: "102290129340398", phone_number_id: "106540352242922", pagina: PAGINA }),
+  })).text();
+  const r = JSON.parse(texto);
+  assert.equal(r.ok, true, texto);
+  const trocas = chamadasGraph.filter((c) => c.path.endsWith("/oauth/access_token"));
+  assert.deepEqual(trocas.map((c) => c.query.redirect_uri), [undefined, "", PAGINA]);
+  for (const segredo of [TOKEN_EMPRESA, CODIGO_PRESO]) assert.equal(texto.includes(segredo), false);
+
+  // URL de página estranha é ignorada: só as duas primeiras tentativas
+  chamadasGraph.length = 0;
+  const ruim = JSON.parse(await (await fetch(`${baseUrl}/conectar/finalizar?k=chave-secreta-da-pagina`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ code: CODIGO_PRESO, waba_id: "102290129340398", pagina: "https://evil.example/outra" }),
+  })).text());
+  assert.equal(ruim.ok, false);
+  assert.equal(chamadasGraph.filter((c) => c.path.endsWith("/oauth/access_token")).length, 2);
 });
 
 test("finalizar conexão: troca o código, assina, sincroniza e não vaza o token", async () => {
